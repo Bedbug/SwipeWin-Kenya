@@ -37,7 +37,7 @@
     "firebase": "^5.8.3",
     "jquery": "^3.4.1",
     "libphonenumber-js": "^1.7.25",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "ng-lottie": "^0.3.2",
     "ng2-img-max": "^2.1.18",
     "ngx-avatar": "^3.2.0",
