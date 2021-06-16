@@ -4,7 +4,7 @@
       <div>
       <ul class="uk-navbar-nav" uk-navbar="dropbar: true; dropbar-mode: push">
         <li>
-          <a class="hamburger-menu " (click)="toggleClass()" uk-toggle="target: #offcanvas-nav">
+          <a class="hamburger-menu" (click)="toggleClass()" uk-toggle="target: #offcanvas-nav">
             <div class="hamburger-inner" [ngClass]="{'pushed': pushed}">
               <div class="toggle-icon">
                 <span class="bar"></span>
@@ -25,7 +25,7 @@
               <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-default">
                   <li class="uk-active">
-                    <a class="nav-list-button"
+                    <a class="nav-list-button animate__animated animate__fadeInUp" style="animation-delay: 100ms;"
                       
                       (click)="closeOffcanvas(); gotoHome()">
                       <div class="nav-list-box uk-flex">
@@ -36,7 +36,7 @@
                   <li>
                     <a 
                     
-                    class="nav-list-button" (click)="closeOffcanvas(); gotoProfile()">
+                    class="nav-list-button animate__animated animate__fadeInUp" style="animation-delay: 200ms;" (click)="closeOffcanvas(); gotoProfile()">
                         <div class="nav-list-box uk-flex">
                       <img class="nav-list-icon" src="assets/icons/profile.svg" alt="">
                       <span>{{ 'BURGER.PROFILE' | translate }}</span>
@@ -46,7 +46,7 @@
                   <li>
                     <a 
                     [routerLink]="['/how-to-play']"
-                    class="nav-list-button" (click)="closeOffcanvas()">
+                    class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 300ms;" (click)="closeOffcanvas()">
                         <div class="nav-list-box uk-flex">
                       <img class="nav-list-icon" src="assets/icons/how-play.svg" alt=""><span>{{ 'BURGER.HOW' | translate }}</span>
                       </div>
@@ -55,14 +55,14 @@
                   <li>
                     <a 
                     [routerLink]="['/prizes']"
-                    class="nav-list-button" (click)="closeOffcanvas()">
+                    class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 400ms;" (click)="closeOffcanvas()">
                         <div class="nav-list-box uk-flex">
                           <img class="nav-list-icon" src="assets/icons/prize.svg" alt=""><span>{{ 'BURGER.PRIZES' | translate }}</span>
                           </div>
                     </a>
                   </li>
                   <li>
-                    <a class="nav-list-button"
+                    <a class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 500ms;"
                       [routerLink]="['/winners']"
                       (click)="closeOffcanvas()">
                         <div class="nav-list-box uk-flex">
@@ -74,7 +74,7 @@
                   <li>
                     <a
                       [routerLink]="['/faq']"
-                      class="nav-list-button" (click)="closeOffcanvas()">
+                      class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 600ms;" (click)="closeOffcanvas()">
                       <div class="nav-list-box uk-flex">
                         <img class="nav-list-icon" src="assets/icons/support.svg" alt=""><span>{{ 'BURGER.FAQ' | translate }}</span>
                       </div>
@@ -83,7 +83,7 @@
                   <li>
                     <a 
                     [routerLink]="['/info']"
-                    class="nav-list-button" (click)="closeOffcanvas()">
+                    class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 700ms;" (click)="closeOffcanvas()">
                         <div class="nav-list-box last-item uk-flex">
                           <img class="nav-list-icon" src="assets/icons/info.svg" alt=""><span>{{ 'BURGER.TERMS' | translate }}</span>
                         </div>
@@ -92,7 +92,7 @@
                   <li>
                       <a 
                       
-                      class="nav-list-button" (click)="changeLanguage();closeOffcanvas()">
+                      class="nav-list-button  animate__animated animate__fadeInUp" style="animation-delay: 800ms;" (click)="changeLanguage();closeOffcanvas()">
                           <div class="nav-list-box uk-flex">
                             <img class="nav-list-icon" src="assets/icons/language.svg" alt=""><span>{{ 'BURGER.LANG' | translate }}</span>
                             </div>
@@ -119,11 +119,12 @@
       </a>
     </div>
     <!-- <div [ngClass]="(alignAllLeft)?'uk-navbar-right':'uk-navbar-left'"> -->
-      <div>
+      <!-- <div>
         <div class="mts-logo uk-navbar-item uk-logo logo-big" style="width:100px;">
           <img src="assets/images/gulogo.png" alt="">
         </div>
-    </div>
+    </div> -->
     
   </nav>
 </div>
+<!--  -->

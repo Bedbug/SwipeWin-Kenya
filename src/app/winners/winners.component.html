@@ -8,7 +8,7 @@
   <table class="uk-table uk-table-divider">
     <thead>
       <tr >
-        <th style="width:50%">{{ 'WINNERS.PRIZE' | translate }}</th>
+        <th style="width:50%; text-align: left; ">{{ 'WINNERS.PRIZE' | translate }}</th>
         <th style="width:50%">{{ 'WINNERS.DATE' | translate }}</th>
       </tr>
     </thead>
@@ -19,7 +19,24 @@
     
   </table>
   
+  
+
 </div>
-<app-button [secondary]="true" class="btn" (click)="goHome()">{{ 'WINNERS.BACK' | translate }}</app-button>
+</div>
+<div class="buttons-container uk-container uk-text-center">
+  <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="isActive" (click)="goHome()">{{ 'HOW.BACK' | translate }}</button>
+</div>
+<div class=" uk-container animate__animated animate__bounceInUp" *ngIf="!openVerify"
+  style="text-align: center; animation-duration: 1s; animation-delay: 1200ms;">
+  
+  <div class="bottom" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="item">
+      <img src="assets/images/logo_centurion.png" style="height: 55px;">
+    </div>
+    <div class="item">
+      <img src="assets/images/logo_safaricom.svg">
+    </div>
+  </div>
+
 </div>
  

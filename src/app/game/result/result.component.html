@@ -1,6 +1,7 @@
-<app-button [link_button]="true" id="openmodal" data-uk-modal="{target:'#result'}" uk-toggle="target: #result"></app-button>
+<app-button [link_button]="true" id="openmodal" data-uk-modal="{target:'#result'}" uk-toggle="target: #result">
+</app-button>
 
-<div id="result" class="uk-flex-top"  uk-modal>
+<div id="result" class="uk-flex-top" uk-modal>
   <!--Top Text-->
   <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
     <h4>{{TopText}}</h4>
@@ -12,80 +13,75 @@
         </div>
         <p>{{answerMessage}}</p>
       </div>
-      
+
     </div>
-    
+
     <!--If there are available games to buy play another game-->
-    
+
     <br>
-    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"  *ngIf="this.session.hasCredit()" (click)="startGame()">{{ 'END.PLAY' | translate }}</button>
+    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close" *ngIf="this.session.hasCredit()"
+      (click)="startGame()">{{ 'END.PLAY' | translate }}</button>
     <p *ngIf="verErrorMes2" style="font-size: 12px; color: rgb(32, 32, 32);">{{ 'HOME.VERERROR2' | translate }}</p>
-    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"  *ngIf="!this.session.hasCredit()" (click)="OpenOTPPurchase()">{{ 'END.BUY' | translate }}</button>
-    
-    <app-button [link_button]="true" [link_button_white]="true" class="uk-modal-close"  (click)="returnHome()">{{ 'END.BACK' | translate }}</app-button>
+    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"
+      *ngIf="!this.session.hasCredit()" (click)="OpenOTPPurchase()">{{ 'END.BUY' | translate }}</button>
+
+    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close" (click)="returnHome()">{{
+      'END.BACK' | translate }}</button>
   </div>
 </div>
 
-<!-- <div id="otp" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+<div class="main-footer uk-container animate__animated animate__bounceInUp" *ngIf="!openVerify"
+  style="text-align: center; animation-duration: 1s; animation-delay: 1200ms;">
+  <!-- {{ 'HOME.FOOTER_01' | translate }} -->
+  <br>
+  <!-- <p>
+    {{ 'HOME.FOOTER_02' | translate }}<br>{{ 'HOME.FOOTER_02b' | translate }}<a [routerLink]="['/info']"
+      style="color:white; text-decoration: underline;">{{ 'HOME.FOOTER_02c' | translate }}</a>
+  </p> -->
+  <div class="main-footer uk-container animate__animated animate__bounceInUp" *ngIf="!openVerify"
+    style="text-align: center; animation-duration: 1s; animation-delay: 1200ms;">
 
-      <div class="buttons-container uk-container uk-text-center" tabindex="-1">
-        <div class="message-container" style="margin-top: 100px">
-          <p style="font-size: 22px;color:  rgb(255, 255, 255);text-align: center;">{{ 'HOME.OTP' | translate }}</p>
-         
-        </div>
-        <div class="buttons-container uk-container uk-text-center"  style="max-width: 595px; margin-bottom: 0px;">
-          
-         
-          <form >
-            <div class="uk-margin" >
-                <div class="uk-inline uk-width-1-1 ">
-                    <a class="uk-form-icon uk-form-icon-flip" ><img class=".uk-position-right" (click)="OpenPass()" src="assets/icons/eye.svg" alt=""></a>
-                    
-                    <input #pin class="uk-input " type="{{passType}}" placeholder="....">
-                </div>
-            </div>
-          </form>
-          
-          <div class="buttons-container uk-container uk-text-center">
-            <p *ngIf="verErrorMes" style="font-size: 12px; color: rgb(255, 255, 255);">{{ 'HOME.VERERROR' | translate }}</p>
-            <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"  (click)="verify(pin.value)">{{ 'HOME.CONFIRM' | translate }}</button> 
-            
-          </div>
-          <div class="message-container" style="margin-top: 0px;">
-            <p style="color:rgb(255, 255, 255); font-weight: bold; font-size: 20px;"><a (click)="resetPin()" style="color: rgb(32, 32, 32); text-decoration: underline;">{{ 'HOME.RESEND' | translate }}</a>
-            </p>
-            
-          </div>
-          
-        </div>
-        </div>
-    
+    <br>
+
+    <div class="bottom" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="item">
+        <img src="assets/images/logo_centurion.png" style="height: 55px;">
       </div>
-  </div> -->
-
-  <div id="otp" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-      <img src="assets/images/wanted.svg" alt="">
-      <h4>{{ 'MESSAGES.MESSAGE_00' | translate }}</h4>
-      <pre>{{ 'MESSAGES.MESSAGE_17' | translate }}</pre>
-      <!--<p>{{errorMsg}}</p>-->
-      <!-- <app-button *ngIf="!logOutBtn" [link_button]="true" class="uk-modal-close">{{ 'MESSAGES.MESSAGE_07' | translate }}</app-button> -->
-      
-      <app-button  [link_button]="true" class="uk-modal-close" (click)="returnHome()">{{ 'MESSAGES.MESSAGE_15' | translate }}</app-button>
-      
+      <div class="item">
+        <img src="assets/images/logo_safaricom.svg">
+      </div>
     </div>
+
   </div>
 
-  <div id="error" class="uk-flex-top" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-      <img src="assets/images/wanted.svg" alt="">
-      <h4>{{ 'END.MES_01' | translate }}</h4>
+</div>
+
+
+
+<div id="otp" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    <img src="assets/images/wanted.svg" alt="">
+    <h4>{{ 'MESSAGES.MESSAGE_00' | translate }}</h4>
+    <pre>{{ 'MESSAGES.MESSAGE_17' | translate }}</pre>
+    <!--<p>{{errorMsg}}</p>-->
+    <!-- <app-button *ngIf="!logOutBtn" [link_button]="true" class="uk-modal-close">{{ 'MESSAGES.MESSAGE_07' | translate }}</app-button> -->
+
+    <app-button [link_button]="true" class="uk-modal-close" (click)="returnHome()">{{ 'MESSAGES.MESSAGE_15' | translate
+      }}</app-button>
+
+  </div>
+</div>
+
+<div id="error" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    <img src="assets/images/wanted.svg" alt="">
+    <h4>{{ 'END.MES_01' | translate }}</h4>
     <pre>{{ 'MESSAGES.MESSAGE_16' | translate }}</pre>
     <!--<p>{{errorMsg}}</p>-->
     <!-- <app-button *ngIf="!logOutBtn" [link_button]="true" class="uk-modal-close">{{ 'MESSAGES.MESSAGE_07' | translate }}</app-button> -->
-    
-    <app-button  [link_button]="true" class="uk-modal-close" (click)="OpenResultAgain()">{{ 'MESSAGES.MESSAGE_15' | translate }}</app-button>
-      
-    </div>
+
+    <app-button [link_button]="true" class="uk-modal-close" (click)="OpenResultAgain()">{{ 'MESSAGES.MESSAGE_15' |
+      translate }}</app-button>
+
   </div>
+</div>

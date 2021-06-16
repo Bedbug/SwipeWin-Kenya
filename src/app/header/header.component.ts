@@ -41,11 +41,9 @@ export class HeaderComponent implements OnInit {
     const that = this;
     UIkit.util.on('#offcanvas-nav', 'hide', function (e) {
       // do something
-      const currentClass = this
-                            .parentElement
-                            .getElementsByClassName('hamburger-menu')[0]
-                            .children[0]
-                            .className;
+      const currentClass = this.parentElement.getElementsByClassName('hamburger-menu')[0].children[0].className;
+      // const currentClass = this.parentElement.getElementsByClassName('hamburger-menu');
+      console.log(currentClass);
 
       if (currentClass.includes('pushed')) {
         that.toggleClass();

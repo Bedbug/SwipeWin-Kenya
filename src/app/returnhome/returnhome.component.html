@@ -8,41 +8,43 @@
     
     <ul class="uk-slideshow-items" >
       <li class="list-wrapper">
-        
-      <div class="uk-position-center uk-position-small uk-text-center uk-light">
-          <div class="vector">
-              <img class="icon" style="width: 300px;" src="assets/icons/weekly_prize.png" alt=""/>
-            </div>
-          <div uk-slideshow-parallax="x: 100,0,0" class="current-prize-fond">
-            <span style="font-weight: bold; font-size: 30px; color: white;" [innerHtml]="'HOME.CAR_01' | translate"></span><br>
-            <span style=" font-size: 20px; color: white;">{{ 'HOME.CAR_01b' | translate }}</span>
-          </div>
-      </div>
-      </li>
-      <li class="list-wrapper">
-        
+            
         <div class="uk-position-center uk-position-small uk-text-center uk-light">
             <div class="vector">
-                <img class="icon" style="width: 300px;" src="assets/icons/monthly_prize.png" alt=""/>
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1K.png" alt=""/>
               </div>
-              <div uk-slideshow-parallax="x: 100,0,0" class="current-prize-fond">
-                <span style="font-weight: bold; font-size: 30px; color: white;" [innerHtml]="'HOME.CAR_02' | translate"></span><br>
-                <span style=" font-size: 20px; color: white;">{{ 'HOME.CAR_02b' | translate }}</span>
-            </div>
-         
+              
         </div>
       </li>
       <li class="list-wrapper">
         
         <div class="uk-position-center uk-position-small uk-text-center uk-light">
             <div class="vector">
-                <img class="icon" style="width: 300px;" src="assets/icons/grand_prize.png" alt=""/>
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2K.png" alt=""/>
               </div>
-              <div uk-slideshow-parallax="x: 100,0,0" class="current-prize-fond">
-                <span style="font-weight: bold; font-size: 30px; color: white;" [innerHtml]="'HOME.CAR_03' | translate"></span><br>
-                <span style=" font-size: 20px; color: white;">{{ 'HOME.CAR_03b' | translate }}</span>
-            </div>
-         
+              
+        </div>
+      </li>
+      <li class="list-wrapper">
+            
+        <div class="uk-position-center uk-position-small uk-text-center uk-light">
+            <div class="vector">
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t3.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t3K.png" alt=""/>
+              </div>
+              
+        </div>
+      </li>
+      <li class="list-wrapper">
+        
+        <div class="uk-position-center uk-position-small uk-text-center uk-light">
+            <div class="vector">
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t4.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t4K.png" alt=""/>
+              </div>
+              
         </div>
       </li>
       
@@ -94,80 +96,24 @@
   <!--END OF PLAY BUTTONS-->
   
  
-  <!-- <div class="main-footer uk-container" *ngIf="!openVerify" style="text-align: center;">
-      {{ 'HOME.FOOTER_01' | translate }}
-    <br>
-    <p >
-    {{ 'HOME.FOOTER_02' | translate }}<br>{{ 'HOME.FOOTER_02b' | translate }}<a  [routerLink]="['/info']" style="color:white; text-decoration: underline;">{{ 'HOME.FOOTER_02c' | translate }}</a>
-    </p>
-    <span style="color:#ff6600">{{ 'HOME.FOOTER_03' | translate }}</span>
-    
-  </div> -->
-  <!-- <div class="main-footer uk-container" *ngIf="isSubscribed && !showLogin" style="max-width:100%">
-   Служба поддержки:  111777 (бесплатно) или отправьте письмо на support@gu-group.ru
-  Услуга оказывается МТС совместно с партнером "ДжЮ Груп". Акция проходит под контролем независимого наблюдателя
-     <p>Support: 1234 (toll free) or <a href="mailto:support.mts@gu-group.ru" class="uk-button-link" style="text-decoration:underline">support@gugroup.com</a>
-       <br>18+   |      © 2019 GU Group. All rights reserved.
-     </p>
-  </div> -->
-    
-  <!--<div class="main-footer2 uk-container" *ngIf="isSubscribed && showLogin" style="max-width:100%">-->
-  <!--  Служба поддержки:  111777 (бесплатно) или отправьте письмо на support@gu-group.ru-->
-  <!--Услуга оказывается МТС совместно с партнером "ДжЮ Груп". Акция проходит под контролем независимого наблюдателя-->
-  <!--    <p>Support: 1234 (toll free) or <a href="mailto:support.mts@gu-group.ru" class="uk-button-link" style="text-decoration:underline">support@gugroup.com</a>-->
-  <!--      <br>18+   |      © 2019 GU Group. All rights reserved.-->
-  <!--    </p>-->
-  <!--  </div>-->
-    
-    <!-- <div id="error" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-        <img src="assets/images/wanted.svg" alt="">
-        <h4>Oops...</h4>
-      <pre>{{errorMsg}}</pre>
-      
-      <app-button *ngIf="!logOutBtn" [link_button]="true" class="uk-modal-close">Back</app-button>
-      <app-button *ngIf="gotofaqBtn" [link_button]="true" class="uk-modal-close" (click)="gotoFaqPage()">Read more at FAQs</app-button>
-      <app-button *ngIf="logOutBtn" [link_button]="true" class="uk-modal-close" (click)="logOutUser()">Back</app-button>
-        
-      </div>
-    </div> -->
-    <!-- <div id="otp" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+  <div class="main-footer uk-container animate__animated animate__bounceInUp" *ngIf="!openVerify"
+  style="text-align: center; animation-duration: 1s; animation-delay: 1200ms;">
+  <!-- {{ 'HOME.FOOTER_01' | translate }} -->
+  <br>
+  <!-- <p>
+    {{ 'HOME.FOOTER_02' | translate }}<br>{{ 'HOME.FOOTER_02b' | translate }}<a [routerLink]="['/info']"
+      style="color:white; text-decoration: underline;">{{ 'HOME.FOOTER_02c' | translate }}</a>
+  </p> -->
+  <div class="bottom" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="item">
+      <img src="assets/images/logo_centurion.png" style="height: 55px;">
+    </div>
+    <div class="item">
+      <img src="assets/images/logo_safaricom.svg">
+    </div>
+  </div>
 
-        <div class="buttons-container uk-container uk-text-center" tabindex="-1">
-          <div class="message-container" style="margin-top: 100px">
-            <p style="font-size: 22px;color:  rgb(32, 32, 32);text-align: center;">{{ 'HOME.OTP' | translate }}</p>
-            
-          </div>
-          <div class="buttons-container uk-container uk-text-center"  style="max-width: 595px; margin-bottom: 0px;">
-            
-            
-            <form >
-              <div class="uk-margin" >
-                  <div class="uk-inline uk-width-1-1 ">
-                      <a class="uk-form-icon uk-form-icon-flip" ><img class=".uk-position-right" (click)="OpenPass()" src="assets/icons/eye.svg" alt=""></a>
-                      
-                      <input #pin class="uk-input " type="{{passType}}" placeholder="....">
-                  </div>
-              </div>
-            </form>
-            
-            <div class="buttons-container uk-container uk-text-center">
-              <p *ngIf="verErrorMes" style="font-size: 12px; color: rgb(32, 32, 32);">{{ 'HOME.VERERROR' | translate }}</p>
-              <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"  (click)="verify(pin.value)">{{ 'HOME.CONFIRM' | translate }}</button> 
-              
-            </div>
-            <div class="message-container" style="margin-top: 0px;">
-              <p style="color:rgb(0, 0, 0); font-weight: bold; font-size: 20px;"><a (click)="resetPin()" style="color: rgb(32, 32, 32); text-decoration: underline;">{{ 'HOME.RESEND' | translate }}</a>
-              </p>
-              
-            </div>
-            
-          </div>
-          </div>
-      
-        </div>
-    </div> -->
+</div>
 
     <div id="otp" class="uk-flex-top" uk-modal>
       <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">

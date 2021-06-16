@@ -8,7 +8,12 @@
 @import 'assets/variables.scss';
 @import '../node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
 
+@import '~animate.css/animate.min';
 
+:root {
+  --animate-duration: 300ms;
+  
+}
 #offcanvas-nav{
   .uk-offcanvas-bar{
     top: 4rem;
@@ -71,7 +76,8 @@ html, body {
   height: 100%;
   // background-image: radial-gradient(circle at 50% 50%, #007cff, #002094);
   // background-image: radial-gradient(circle at 50% 50%, #262729, #262729);
-  background-image: url("assets/images/background.jpg");
+  background: radial-gradient(circle, rgba(62,46,119,1) 0%, rgba(28,24,41,1) 100%);
+  // background-image: url("assets/images/background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -95,21 +101,36 @@ html, body {
   margin-top: 1rem;
   .play-button {
     border-radius: 25px;
-    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom, #077dbd, #077dbd 16%, #077dbd 66%, #077dbd);
+    box-shadow: 1px 4px 0px 0 #cf1ac96b;
+    background-image: linear-gradient(to bottom, #cf1ac9, #cf1ac9 16%, #5c2784 66%, #451b65);
     margin-bottom: 12px;
     border: none;
     font-size: 25px;
     font-style: normal;
     font-stretch: normal;
+    font-weight: bold;
     line-height: 1.25;
     letter-spacing: normal;
     text-align: center;
     color: white;
-    min-height: 44px;
+    min-height: 60px;
     text-transform: none;
   }
 }
+
+.uk-input, .uk-select, .uk-textarea {
+  border-radius: 25px;
+  max-width: 100%;
+  width: 100%;
+  border: 0 none;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.52);
+  color: #666;
+  border: 1px solid #e5e5e578;
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+}
+
 
 .btnWrap {
   position: absolute;
@@ -137,15 +158,15 @@ html, body {
     top: 10px;
     left: 50%;
     margin-left: -50px;
-    background-color: #000000;
+    background-color: #ffffff;
     text-align: center;
     font-weight: bold;
-    color: #fff;
+    color: #cf1ac9;
     transform-origin: 50% 50%;
     font-size: 30px;
 }
 .inside_text{
-  background-color: #000000;
+  background-color: #ffffff;
     width: 200px;
     height: 55px;
     position: absolute;

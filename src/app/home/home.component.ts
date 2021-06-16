@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
   openSubSuccess: boolean = false;
   alertNumber: boolean = false;
   verErrorMes: boolean = false;
-  
+  isEng: boolean = true;
+
   // get this form the User object
   get isHasCashback(): boolean {
     return this._isHasCashback;
@@ -79,12 +80,24 @@ export class HomeComponent implements OnInit {
     private cookieService: CookieService,
     private translate: TranslateService
     
-    ) {}
+    ) {
+      translate.onLangChange.subscribe(lang => {
+        if (this.translate.currentLang == 'en')
+          this.isEng = true;
+        else
+          this.isEng = false;
+  
+      })
+    }
     
   
   ngOnInit() {
 
-    
+    console.log(this.translate.currentLang);
+    if (this.translate.currentLang == 'en')
+      this.isEng = true;
+    else
+      this.isEng = false;
     
     // Get Login On From LocalStorage
     this.loginOn = 0;

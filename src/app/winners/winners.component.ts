@@ -16,7 +16,7 @@ export class WinnersComponent implements OnInit {
   public monthlyWinners$: Array<any> = [];
   showDay: boolean = true;
   sliceNum: number = 5;
-  
+  public isActive: boolean = false;
   
   
   constructor(private data: DataService, private sessionService: SessionService, private router: Router,) { }
@@ -28,6 +28,16 @@ export class WinnersComponent implements OnInit {
     }
   
   ngOnInit() {
+    window.scroll(0,0);
+    if (!this.sessionService.token || !this.sessionService.isSubscribed || !this.sessionService.isEligible) {
+      // wanna inform the user here?
+      this.isActive = true;
+      
+    }else{
+      this.isActive = false;
+      
+    }
+
     this.data.getWinners().then(
         (data:any) => {
           

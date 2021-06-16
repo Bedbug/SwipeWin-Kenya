@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { SessionService } from '../session.service';
 import { Router } from '@angular/router';
 import UIkit from 'uikit';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-returnhome',
@@ -14,10 +15,11 @@ export class ReturnhomeComponent implements OnInit {
   credits: number;
   loggedin: boolean = true;
   openVerify: true;
-  lblShow:boolean = true;
+  lblShow: boolean = true;
   passType: string = "password";
   verErrorMes: boolean = false;
   verErrorMes2: boolean = false;
+  isEng: boolean = true;
 
   get hasCashback(): number {
     return this._cashBackAmount;
@@ -25,15 +27,15 @@ export class ReturnhomeComponent implements OnInit {
   get isSubscribed(): boolean {
     return this._isSubscribed;
   }
-  
+
   get isChecked(): boolean {
     return this._isChecked;
   }
-  
+
   get gamesPlayed(): number {
     return this._gamesPlayed;
   }
-  
+
   // Check if already a subscribed player
   private _isSubscribed = false;
   // Check if he has cashback waiting
@@ -47,67 +49,82 @@ export class ReturnhomeComponent implements OnInit {
   public noMoreRealGames = "Unfortunately, your current plan is not allowed to participate.\nTry using another number.";
   public noMoreDemoGames = "No more demo games available! \n Why don't you try the real thing?";
 
-  checkCheckBoxvalue(event){
+  checkCheckBoxvalue(event) {
     console.log(event.target.checked);
     this._isChecked = event.target.checked;
   }
-  
+
   GoSubscribe() {
-    
+
   }
   startGame() {
-    console.log("Games Played: "+ this.gamesPlayed);
+    console.log("Games Played: " + this.gamesPlayed);
     // this.sessionService.state = "INACTIVE"
     console.log("Play Main Game!");
-      this.sessionService.gamesPlayed++;
-      this.router.navigate(['game']);
-      
+    this.sessionService.gamesPlayed++;
+    this.router.navigate(['game']);
+
   }
-  
+
   startFreeGame() {
     this.router.navigate(['freetimegame']);
   }
 
-  constructor(private dataService: DataService, private sessionService: SessionService, private router: Router) { }
+  constructor(
+    private dataService: DataService,
+    private sessionService: SessionService,
+    private router: Router,
+    private translate: TranslateService) {
+    translate.onLangChange.subscribe(lang => {
+      if (this.translate.currentLang == 'en')
+        this.isEng = true;
+      else
+        this.isEng = false;
+
+    })
+  }
 
   ngOnInit() {
-    
+    if (this.translate.currentLang == 'en')
+      this.isEng = true;
+    else
+      this.isEng = false;
 
     // console.log( "Has Credit: " + this.sessionService.hasCredit() );
-    console.log( "Played Games: " + this.sessionService.gamesPlayed );
+    console.log("Played Games: " + this.sessionService.gamesPlayed);
     // user login validation check
     if (!this.sessionService.token || !this.sessionService.isSubscribed || !this.sessionService.isEligible || this.sessionService.isUnsub()) {
       // wanna inform the user here?
-      if(this.sessionService.isUnsub())
-          this.router.navigate(['/home']);
-        else{
-          // Redirect him to Home
-          this.router.navigate(['/home'], { queryParams: { errorCode: 401 } });
-        }
-      
+      if (this.sessionService.isUnsub())
+        this.router.navigate(['/home']);
+      else {
+        // Redirect him to Home
+        this.router.navigate(['/home'], { queryParams: { errorCode: 401 } });
+      }
+
     }
     else if (!this.sessionService.isEligible) {
       this.router.navigate(['/home'], { queryParams: { errorCode: 1026 } });
     }
     else {
-      
+
       this._isSubscribed = this.sessionService.isSubscribed;
       console.log(this.sessionService.msisdn);
-      console.log("this.session "+this.sessionService.token);
+      console.log("this.session " + this.sessionService.token);
       // this._cashBackAmount = this.sessionService._cashBackAmount;
       // this._cashBackAmount = 500;
-      
+
       // TOBE ERASED
       // This resets the games played every time
-      
-      
-      this.dataService.getUserProfile().then( 
-        (data:User) => {
+
+
+      this.dataService.getUserProfile().then(
+        (data: User) => {
           this.sessionService.user = data;
           this._gamesPlayed = this.sessionService.gamesPlayed;
-          
-          console.log("this._gamesPlayed "+this._gamesPlayed);
-          console.log("this.sessionService.gamesPlayed "+this.sessionService.gamesPlayed);
+
+          console.log("this._gamesPlayed " + this._gamesPlayed);
+          console.log("this.sessionService.gamesPlayed " + this.sessionService.gamesPlayed);
 
           this.CheckCredits();
           // Set Properties here
@@ -115,48 +132,48 @@ export class ReturnhomeComponent implements OnInit {
           // this._cashBackAmount = this.sessionService.user.wallet.pendingMaturityCashback + this.sessionService.user.wallet.pendingTransferCashback;
         },
         (err) => {
-          
+
         }
-        
+
       );
     }
   }
 
   CheckCredits() {
-    console.log("Checking Credits: "+ this.sessionService.hasCredit());
-    
-      this.sessionService.hasCredit();
-    
+    console.log("Checking Credits: " + this.sessionService.hasCredit());
+
+    this.sessionService.hasCredit();
+
   }
 
   OpenOTPPurchase() {
     // Check if user state is PENDING
-      if (this.sessionService.isPending()){
-          // If yes show message that user already is waiting for Credit+Link
-          this.verErrorMes2 = true;
-      } else {
-        // If not
-        this.dataService.purchaseCreditRequest().subscribe((resp: any) => {
-          console.log(resp);
-          // Change Session state 
-          this.sessionService.state = "PENDING";
-          // Open Modal
-          let modal = UIkit.modal("#otp");
+    if (this.sessionService.isPending()) {
+      // If yes show message that user already is waiting for Credit+Link
+      this.verErrorMes2 = true;
+    } else {
+      // If not
+      this.dataService.purchaseCreditRequest().subscribe((resp: any) => {
+        console.log(resp);
+        // Change Session state 
+        this.sessionService.state = "PENDING";
+        // Open Modal
+        let modal = UIkit.modal("#otp");
+        modal.show();
+      },
+        (err: any) => {
+          console.log("Error with Sending purchase Pin!!!");
+          let modal = UIkit.modal("#error");
           modal.show();
-        },
-          (err: any) => {
-            console.log("Error with Sending purchase Pin!!!");
-            let modal = UIkit.modal("#error");
-            modal.show();
         });
-      }
+    }
   }
 
-  
-  OpenPass(){
+
+  OpenPass() {
     this.lblShow = !this.lblShow;
     console.log("Hide/Show Password: " + this.lblShow);
-    if(this.lblShow)
+    if (this.lblShow)
       this.passType = "password";
     else
       this.passType = "test";
@@ -173,12 +190,12 @@ export class ReturnhomeComponent implements OnInit {
 
       // Deserialize payload
       const body: any = resp.body; // JSON.parse(response);
-      
+
       if (body.hasCredit != undefined)
         this.sessionService.hasCredits = body.hasCredit;
 
       console.log("hasCredit: " + this.sessionService.hasCredit());
-     
+
 
       this.sessionService.user = body;
       this._gamesPlayed = this.sessionService.gamesPlayed;
@@ -194,10 +211,10 @@ export class ReturnhomeComponent implements OnInit {
     },
       (err: any) => {
         console.log("Error With Pin!!!");
-       this.verErrorMes = true;
+        this.verErrorMes = true;
       });
   }
-  
+
   resetPin() {
     console.log("Reset PIN!");
   }

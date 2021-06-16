@@ -3,8 +3,12 @@
 </div>
 
 <div class="profile-component uk-text-center settings" style="max-width: 600px;
+
     margin-left: auto;
     margin-right: auto;">
+    <div class="header_title">
+      <span class="inside_text">{{ 'SETT.SETT' | translate }}</span>
+    </div>
   <div class="avatar">
     <!--<ngx-avatar *ngIf="showAvatar" class="my-avatar" -->
   
@@ -16,7 +20,7 @@
     <div class="js-upload" uk-form-custom>
     <input type="file" accept="image/*" class="btn" (change)="OnFileSelected($event)" multiple>
     
-    <app-button [secondary]="true" class="btn">{{ 'SETT.UPLOAD' | translate }}</app-button> 
+    <button  class="button_secondary button">{{ 'SETT.UPLOAD' | translate }}</button> 
     
     </div>
     <!--<input class="btn" type="file" (change)="OnFileSelected($event)" >-->
@@ -64,7 +68,7 @@
     <!--Toggle Unsubscribe-->
     
     <!-- <app-button [secondary]="true" class="btn" (click)="sendMail()">Help</app-button> -->
-    <app-button [secondary]="true" class="btn" (click)="saveData()" >{{ 'SETT.SAVE' | translate }}</app-button>
+    <button  class="uk-button uk-button-default play-button uk-width-1-1" (click)="saveData()" >{{ 'SETT.SAVE' | translate }}</button>
     <app-button [link_button]="true" [link_button_white]="true" (click)="logOut()" style="text-decoration:underline">{{ 'SETT.LOGOUT' | translate }}</app-button>
     <!-- <app-button [link_button]="true" [link_button_white]="true" class="btn unsubscribe" uk-toggle="target: #unsubscribe">Unsubscribe</app-button> -->
   </div>

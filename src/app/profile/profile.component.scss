@@ -23,7 +23,7 @@
       font-stretch: normal;
       line-height: 1.47;
       letter-spacing: normal;
-      color: #077dbd;
+      color: #fff;
     }
     .text {
       font-size: 12px;
@@ -70,7 +70,7 @@
 }
 
 .days-summary {
-  margin: 0 32px 32px 32px;
+  margin: 0 84px 32px 75px;
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -107,8 +107,15 @@
   text-transform: none;
 }
 
-.my-avatar /deep/ .avatar-content {
+.my-avatar .avatar-content {
     max-height: 100%;
+}
+.my-avatar{
+  fill: none;
+  stroke: #646464;
+  stroke-width: 1px;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 767px), (max-height: 719px) {

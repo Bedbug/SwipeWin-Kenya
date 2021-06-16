@@ -6,30 +6,35 @@
   font-stretch: normal;
   line-height: 1.25;
   letter-spacing: normal;
-  color: #000000;
+  color: #385165;
   .faq-item {
-    padding: 16px 11px 16px 11px;
-    border-radius: 15px;
+    padding: 16px 11px 3px 11px;
+    border-radius: 5px;
     box-shadow: 0 2px 20px 0 rgba(60, 61, 64, 0.1), 0 2px 4px 0 rgba(55, 55, 56, 0.2);
-    background-color: #000000c9;
+    background-color: #ffffff;
     .uk-accordion-content {
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.43;
-      letter-spacing: normal;
-      color: #ffffff;
+      padding: 11px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+    background: #f8f8f8;
+    margin: -2px -10px;
+    // box-shadow: inset 0 4px 13px 0px rgb(0, 0, 0, 0.4);
+    box-shadow: inset 0 4px 13px 0px rgba(0,0,0,0.10);
     }
   }
 }
 .uk-accordion-title:before {
-  background-color: #ffffff;
+  background-color: #cf1ac9;
   mask: url('../../../node_modules/uikit/src/images/icons/chevron-down.svg') no-repeat 50% 50%;
 }
 .uk-open {
   .uk-accordion-title:before {
-    background-color: #ffffff;
+    background-color: #cf1ac9;
     mask: url('../../../node_modules/uikit/src/images/icons/chevron-up.svg') no-repeat 50% 50%;
   }
 }
@@ -47,7 +52,7 @@
   }
   
 .buttons-container{
-  max-width: 600px;
+  // max-width: 600px;
 }
 
 .main-footer{
@@ -87,15 +92,17 @@
   p {
     font-size: 16px;
     line-height: 1.43;
-    color: #6e7782;
+    color: #000000;
   }
 }
-
+.uk-accordion > :nth-child(n+2) {
+  margin-top: 10px;
+}
 .uk-accordion-title {
-  isplay: block;
+  display: block;
     font-size: medium;
     line-height: 1.4;
-    color: #077dbd;
+    color: #000000;
     overflow: hidden;
     font-weight: bold;
 }

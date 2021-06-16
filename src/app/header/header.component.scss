@@ -3,11 +3,10 @@
   z-index: 100;
   width: 100%;
   .uk-navbar-container{
-    background: black;
+    background: rgb(255, 255, 255);
     box-shadow: 0 5px 20px rgba(0,0,0,0.09);
     height: 68px;
   }
-
 }
 .hamburger-inner {
   margin-top: -10px;
@@ -25,7 +24,7 @@
   width: 24px;
   height: 3px;
   margin-bottom: 4px;
-  background:  #ffffff;
+  background:  #cf1ac9;
   /* border-right: 2.8em solid #fff; */
   /* border-left: 0.6em solid #d6d6d6; */
   box-sizing: border-box;
@@ -94,7 +93,7 @@
     
   }
   .uk-offcanvas-bar {
-    background: #262729;
+    background: #2c0a47;
   }
 }
 
@@ -113,7 +112,7 @@
     width: 100%;
   }
   .uk-offcanvas-bar {
-    background: #262729;
+    background: #2c0a47;
   }
   
   
