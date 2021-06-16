@@ -43,7 +43,7 @@
     "gsap": "^3.6.0",
     "jquery": "^3.5.1",
     "libphonenumber-js": "^1.7.25",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "ng-lottie": "^0.3.2",
     "ng2-img-max": "^2.1.18",
     "ngx-avatar": "^3.2.0",
