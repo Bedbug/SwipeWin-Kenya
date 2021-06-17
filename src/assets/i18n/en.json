@@ -91,6 +91,7 @@
         "BACK": "Go Back"
     },
     "TUTORIAL": {
+        "SKIP":"SKIP and PLAY",
         "MES_01": "Swipe Left or Right",
         "MES_02": "All you have to do is Swipe right<br>for Yes or left for No",
         "MES_03": "55 seconds per game",

@@ -91,6 +91,7 @@
         "BACK": "Rudi nyuma"
     },
     "TUTORIAL":{
+        "SKIP":"",
         "MES_01": "Pinda kushoto au kulia",
         "MES_02": "Unachohitajika kufanya ni kutumia kidole chako kupinda kulia<br> kusema ndio au kushoto kukataa",
         "MES_03": "Umepewa sekunde 55 kwa kila mchezo",

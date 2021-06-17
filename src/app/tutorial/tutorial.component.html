@@ -118,7 +118,8 @@
     </div>
   <div class="buttons-container uk-container uk-text-center" style="max-width:600px" >
     <!--<app-button [primary]="true">Далее</app-button>-->
-    <app-button [secondary]="true"(click)="changeTutorialFlag()">Skip</app-button>
+    <button class="uk-button uk-button-default play-button uk-width-1-1"  (click)="changeTutorialFlag()">{{
+      'TUTORIAL.SKIP' | translate }}</button>
   </div>
   </div>
  
