@@ -154,6 +154,7 @@ export class HomeComponent implements OnInit {
 
           // Get JWT token from response header and keep it for the session
           const userToken = resp.headers.get('X-Access-Token');
+          
           if (userToken)  // if exists, keep it
             this.sessionService.token = userToken;
 
@@ -171,6 +172,7 @@ export class HomeComponent implements OnInit {
           
           // Update the user State
           this.sessionService.state = body.state;
+          // this.sessionService.state = "INACTIVE";
           console.log(this.sessionService.state);
           console.log("Checking Credits: "+ this.sessionService.hasCredit());
           

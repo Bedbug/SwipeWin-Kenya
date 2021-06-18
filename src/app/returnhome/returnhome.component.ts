@@ -95,12 +95,12 @@ export class ReturnhomeComponent implements OnInit {
     // user login validation check
     if (!this.sessionService.token || !this.sessionService.isSubscribed || !this.sessionService.isEligible || this.sessionService.isUnsub()) {
       // wanna inform the user here?
-      if (this.sessionService.isUnsub())
+      // if (this.sessionService.isUnsub())
         this.router.navigate(['/home']);
-      else {
-        // Redirect him to Home
-        this.router.navigate(['/home'], { queryParams: { errorCode: 401 } });
-      }
+      // else {
+      //   // Redirect him to Home
+      //   this.router.navigate(['/home'], { queryParams: { errorCode: 401 } });
+      // }
 
     }
     else if (!this.sessionService.isEligible) {
