@@ -19,7 +19,7 @@
         "PLAY": "Play now",
         "BUY": "Play More",
         "NOMORE": "No more games for today",
-        "FOOTER_01": "1st day free, then 10 KES/day",
+        "FOOTER_01": "1st day free, then KES 11/day",
         "FOOTER_02": "By clicking Subscription you confirm that you have ",
         "FOOTER_02b": "read and agreed to the ",
         "FOOTER_02c": "Terms & Conditions.",
@@ -70,7 +70,7 @@
         "MES_03b": "as many question as possible.",
         "MES_04": "Be careful! For each wrong answer",
         "MES_04b": "you lose 5 seconds.",
-        "MES_05": "Want to improve your score? Buy additional games for 10 KES/ extra game.",
+        "MES_05": "Want to improve your score? Buy additional games for KES 10 / extra game.",
         "MES_05b": "Buy additional games",
         "BACK": "Go Back"
     },
@@ -105,7 +105,7 @@
         "FAQ": "FAQ",
         "data": [
             {"title": "How do I subscribe?",
-                "descr":"<p>You can subscribe to 'Mega Quiz' service by:<br />Visiting https://www.megaquiz.net <br />Dial *482*1# from your Safaricom mobile number<br />Send Win to 21389 from your Safaricom mobile number</p>"},
+                "descr":"<p>You can subscribe to 'Mega Quiz' service by:<br />Visiting https://www.megaquiz.net <br />Send Win to 21389 from your Safaricom mobile number</p>"},
             {"title": "What is the duration of the service?",
                 "descr":"<p>The service has 3 months duration and is renewed automatically.</p>"},
             {"title": "What are the prizes?",

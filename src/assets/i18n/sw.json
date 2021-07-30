@@ -19,7 +19,7 @@
         "PLAY": "Cheza sasa",
         "BUY": "Cheza zaidi",
         "NOMORE": "Hauwezi kucheza tena leo",
-        "FOOTER_01": "Siku ya kwanza hakuna malipo, alafu shilingi 10 kila siku inayofuata.",
+        "FOOTER_01": "Siku ya kwanza hakuna malipo, alafu shilingi 11 kila siku inayofuata.",
         "FOOTER_02": "Unapokubali kujisajili, unathibitisha kwamba",
         "FOOTER_02b": "Umesoma na ukakubaliana na",
         "FOOTER_2c": "Sheria na masharti.",
@@ -105,7 +105,7 @@
         "FAQ": "FAQ",
         "data": [
             {"title": "Nitajisajili vipi?",
-                "descr":"<p>Unaweza kujisajili kwa huduma ya 'Mega Quiz' kwa:<br/>kutembelea tovuti ya https://www.megaquiz.net <br /> Bonyeza *482*1# kutoka kwa nambari yako ya simu ya Safaricom <br />Tuma neno win kwa 21389 kutoka kwa nambari yako ya simu ya Safaricom</p>"},
+                "descr":"<p>Unaweza kujisajili kwa huduma ya 'Mega Quiz' kwa:<br/>kutembelea tovuti ya https://www.megaquiz.net <br /> Tuma neno win kwa 21389 kutoka kwa nambari yako ya simu ya Safaricom</p>"},
             {"title": "Huduma hii itaweza kutumika kwa muda gani?",
                 "descr":"<p>Huduma hii itadumu kwa miezi mitatu na hatimaye kuanzishwa upya itakapokamilika.<p/>"},
             {"title": "Washindi watapewa zawadi za aina gani?",
