@@ -70,7 +70,7 @@
         "MES_03b": " idadi ya maswali mengi utakavyoweza.",
         "MES_04": "Kuwa mwangalifu! Kwa kila swali unalokosa jibu sahihi",
         "MES_04b": "Unapunguziwa muda kwa sekunde 5.",
-        "MES_05": "Je, ungependa kuboresha matokeo yako? Nunua chances zingine za kucheza kwa 10bob kila moja",
+        "MES_05": "Je, ungependa kuboresha matokeo yako? Nunua chances zingine za kucheza kwa 11bob kila moja",
         "MES_05b": "Nunua nafasi zaidi za kucheza",
         "BACK": "Rudi nyuma"
     },
@@ -109,7 +109,7 @@
             {"title": "Huduma hii itaweza kutumika kwa muda gani?",
                 "descr":"<p>Huduma hii itadumu kwa miezi mitatu na hatimaye kuanzishwa upya itakapokamilika.<p/>"},
             {"title": "Washindi watapewa zawadi za aina gani?",
-                "descr":"<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>Shilingi 500 kwa kupitia M-PESA</li><li>Shilingi 50,000 pesa taslimu </li><li>Tuzo kuu la shilingi 250,000 pesa taslimu</li></ul>"},
+                "descr":"<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>KES 500 Kila siku</li><li>KES 50,000 kila wiki </li><li>Tuzo kuu la KES 250,000</li></ul>"},
             {"title": "Nitakaposhinda, nitajulishwa ujumbe huu kwa njia gani?",
                 "descr": "<p>Washindi watapokea simu kutoka kwa stesheni ya Centurion katika siku zinazofuata kutoa maelezo zaidi. Hiyvo basi, usiwe na shaka, kumbuka kuweka simu karibu na wewe.</p>"},
             {"title": "Ninaweza kushinda zawadi ya aina moja mara ngapi?",
@@ -121,9 +121,9 @@
             {"title": "Je, salio langu la Mega Quiz ni halali kwa muda gani kabla litupiliwe mbali?",
                 "descr": "<p>Salio unazotunukiwa pamoja na zile unazonunua zinafaa kutumika ndani ya masaa 24. Zisipotumika katika muda huu, basi haziwezi kutumika tena baadaye.</p>"},
             {"title": "Nimemaliza salio langu la siku. Je ninaweza kuongeza zaidi?",
-                "descr": "<p>Unaweza kununua salio la kuongeza la Mega Quiz kwa shilingi 10 baada ya kutumia salio unalopewa kila siku.</p>"},
+                "descr": "<p>Unaweza kununua salio la kuongeza la Mega Quiz kwa shilingi 11 baada ya kutumia salio unalopewa kila siku.</p>"},
             {"title": "Je, nitatumia mbinu gani kujiondoa kwa huduma hii?",
-                "descr": "<p>Kusimamisha usajili wako wa 'Mega Quiz' tuma neno STOP kwa nambari 21389.</p>"},
+                "descr": "<p>Kusimamisha usajili wako wa 'Mega Quiz' bonyeza *456*20#</p>"},
             {"title": "Sina nambari ya simu ya Safaricom. Je, nitawezaje kushiriki katika huduma hii?",
                 "descr": "Hapana, iwapo hauna nambari ya simu ya Safaricom, hautaweza kushiriki katika huduma hii.</p>"}
             ]

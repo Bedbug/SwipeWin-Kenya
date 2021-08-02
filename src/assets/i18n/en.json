@@ -70,7 +70,7 @@
         "MES_03b": "as many question as possible.",
         "MES_04": "Be careful! For each wrong answer",
         "MES_04b": "you lose 5 seconds.",
-        "MES_05": "Want to improve your score? Buy additional games for KES 10 / extra game.",
+        "MES_05": "Want to improve your score? Buy additional games for KES 11 / extra game.",
         "MES_05b": "Buy additional games",
         "BACK": "Go Back"
     },
@@ -109,7 +109,7 @@
             {"title": "What is the duration of the service?",
                 "descr":"<p>The service has 3 months duration and is renewed automatically.</p>"},
             {"title": "What are the prizes?",
-                "descr":"<p>Mega Quiz service gives away:</p><ul><li>Daily 500 KES in M-PESA</li><li>Weekly 50,000 KES in CASH</li><li>Trimester Prize 250,000 KES in CASH</li></ul>"},
+                "descr":"<p>Mega Quiz service gives away:</p><ul><li>Daily KES 500</li><li>Weekly KES 50,000</li><li>Grand Prize KES 250,000</li></ul>"},
             {"title": "If I win how will I be informed?",
                 "descr":"<p>The winner will be contacted by Centurion in the next days as to explain the process needed. So do not worry, just keep your phone on.</p>"},
             {"title": "How many times may I win each prize?",
@@ -121,9 +121,9 @@
             {"title": "Does my Mega Quiz credits expire?",
                 "descr":"<p>Both awarded and purchased Mega Quiz credits expire after 24 hours if not consumed until then.</p>"},
             {"title": "I consume my daily credit, can I add more?",
-                "descr":"<p>You can purchase an extra Mega Quiz credit only for 10 KES upon consuming your available daily credit.</p>"},
+                "descr":"<p>You can purchase an extra Mega Quiz credit only for KES 11 upon consuming your available daily credit.</p>"},
             {"title": "How can I unsubscribe?",
-                "descr":"<p>To cancel your 'Mega Quiz' subscription, send 'STOP' to the short code 21389.</p>"},
+                "descr":"<p>To cancel your 'Mega Quiz' subscription, dial *456*20#</p>"},
             {"title": "I'm not a Safaricom subscriber, may I participate to the service?",
                 "descr":"<p>No, if you are not a Safaricom subscriber unfortunately you cannot subscribe to the service.</p>"}
             ]
