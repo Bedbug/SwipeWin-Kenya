@@ -1348,13 +1348,13 @@ var __phaser = {
 
 
       function answerResult() {
-        console.log("answerResult!!! ");
+        // console.log("answerResult!!! ");
         demoIsDragging = false;
         var mainCard = game.logic.mainCard;
 
         if (mainCard.cardObject.getChildAt(0).overlap(dropZoneYes)) {
           mainCard.cardObject.inputEnabled = false;
-          console.log("dropZoneYes !!!");
+          // console.log("dropZoneYes !!!");
           if (__phaser.game.type !== 'timefree') {
             that.yesButton_Desat.alpha = 1;
             that.noButton_Desat.alpha = 1;
@@ -1371,7 +1371,7 @@ var __phaser = {
           mainCard.userAnswer(0, __phaser.game.type, apiCallback);
         } else if (mainCard.cardObject.getChildAt(0).overlap(dropZoneNo)) {
           mainCard.cardObject.inputEnabled = false;
-          console.log("dropZoneNo !!!");
+          // console.log("dropZoneNo !!!");
           if (__phaser.game.type !== 'timefree') {
             that.yesButton_Desat.alpha = 1;
             that.noButton_Desat.alpha = 1;

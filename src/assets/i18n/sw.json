@@ -1,5 +1,5 @@
 {
-    "HOME":{
+    "HOME": {
         "CAR_01": "Shilingi 500 kwa kupitia M-PESA",
         "CAR_01b": "kila siku",
         "CAR_02": "Shilingi 50,000 pesa taslimu",
@@ -37,19 +37,19 @@
         "PRIZES": "Zawadi",
         "WINNERS": "Washindi",
         "FAQ": "Maswali",
-        "TERMS":"Sheria na Masharti",
+        "TERMS": "Sheria na Masharti",
         "LANG": "English"
     },
-    "PROFILE":{
+    "PROFILE": {
         "PROFILE": "Wasifu wa mtumizi",
         "POINTS": "Alama",
-        "PLAYED":" Michezo uliyocheza",
+        "PLAYED": " Michezo uliyocheza",
         "BEST": "Matokeo bora zaidi",
         "DAYS": "Siku zilizosalia katika huduma",
         "SETTINGS": "Mipangilio",
         "BACK": "Rudi kwenye ukurasa wa kwanza"
     },
-    "SETT":{
+    "SETT": {
         "SETT": "Mipangilio",
         "UPLOAD": "Ongeza picha kwa wasifu wako",
         "SEX": "Jinsia",
@@ -60,7 +60,7 @@
         "SAVE": "Hifadhi",
         "LOGOUT": "Log Out"
     },
-    "HOW":{
+    "HOW": {
         "HOW": "Jinsi ya kucheza",
         "MES_01": "Jisajili katika mchezo wa Mega Quiz",
         "MES_01b": "Jiunge katika mchezo ili upate nafasi ya kushinda zawadi kemkem.",
@@ -74,7 +74,7 @@
         "MES_05b": "Nunua nafasi zaidi za kucheza",
         "BACK": "Rudi nyuma"
     },
-    "PRIZES":{
+    "PRIZES": {
         "PRIZES": "Zawadi",
         "MES_01": "Shilingi 500 kwa kupitia M-PESA",
         "MES_02": "kila siku",
@@ -84,15 +84,15 @@
         "MES_06": "TUZO KUU",
         "BACK": "Rudi Nyuma"
     },
-    "WINNERS" :{
+    "WINNERS": {
         "WINNERS": "Washindi",
         "PRIZE": "Zawadi",
         "DATE": "Tarehe",
         "BACK": "Rudi nyuma"
     },
-    "TUTORIAL":{
-        "SKIP":"Cheza moja kwa moja",
-        "SKIP2":"Cheza",
+    "TUTORIAL": {
+        "SKIP": "Cheza moja kwa moja",
+        "SKIP2": "Cheza",
         "MES_01": "Pinda kushoto au kulia",
         "MES_02": "Unachohitajika kufanya ni kutumia kidole chako kupinda kulia<br> kusema ndio au kushoto kukataa",
         "MES_03": "Umepewa sekunde 55 kwa kila mchezo",
@@ -105,31 +105,58 @@
     "FAQ": {
         "FAQ": "FAQ",
         "data": [
-            {"title": "Nitajisajili vipi?",
-                "descr":"<p>Unaweza kujisajili kwa huduma ya 'Mega Quiz' kwa:<br/>kutembelea tovuti ya https://www.megaquiz.net <br /> Tuma neno win kwa 21389 kutoka kwa nambari yako ya simu ya Safaricom</p>"},
-            {"title": "Huduma hii itaweza kutumika kwa muda gani?",
-                "descr":"<p>Huduma hii itadumu kwa miezi mitatu na hatimaye kuanzishwa upya itakapokamilika.<p/>"},
-            {"title": "Washindi watapewa zawadi za aina gani?",
-                "descr":"<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>KES 500 Kila siku</li><li>KES 50,000 kila wiki </li><li>Tuzo kuu la KES 250,000</li></ul>"},
-            {"title": "Nitakaposhinda, nitajulishwa ujumbe huu kwa njia gani?",
-                "descr": "<p>Washindi watapokea simu kutoka kwa stesheni ya Centurion (+254 794 867 517) katika siku zinazofuata kutoa maelezo zaidi. Hiyvo basi, usiwe na shaka, kumbuka kuweka simu karibu na wewe.</p>"},
-            {"title": "Ninaweza kushinda zawadi ya aina moja mara ngapi?",
-                "descr": "<p> Mchezaji hawezi kutunukiwa tuzo la aina moja zaidi ya mara moja.</p>"},
-            {"title": "Je, ninaweza kubadilisha lugha inayotumika katika huduma hii?",
-                "descr":"<p>Kama unashiriki katika lugha ya Kiingereza na ungependa kutumia Kiswahili, tuma neno SW kwenye nambari 21389.<br><br>Kama unashiriki kataika lugha ua Kiswahili na ungependa kutumia Kiingereza, tuma neno EN kwenye Nambari 21389.</p>"},
-            {"title": "Ni masharti gani yanafaa kutumikiwa katika huduma hii ya Mega Quiz?",
-                "descr":"<p>Kila nafasi ya mchezo inachukuwa sekunde 55.</p><p>Kila swali lina sentensi inayokabiliwa na picha husika.</p><p>Mchezaji anafaa kutumia kidole chake kupinda kulia kukubali kwamba jibu hilo ni sahihi au kushoto kuashiria kwamba jibu si sahihi.</p><p>Kua mwangalifu! Kila jibu lisilo sahihi linaondoa sekunde 5 kwa muda uliosalia!</p><p>Unapoendelea kushiriki katika raundi tofauti, maswali spesheli yanaweza kukabidhi kwa mfano maswali ya shaba, fedha na dhahabu.</p>"},
-            {"title": "Je, salio langu la Mega Quiz ni halali kwa muda gani kabla litupiliwe mbali?",
-                "descr": "<p>Salio unazotunukiwa pamoja na zile unazonunua zinafaa kutumika ndani ya masaa 24. Zisipotumika katika muda huu, basi haziwezi kutumika tena baadaye.</p>"},
-            {"title": "Nimemaliza salio langu la siku. Je ninaweza kuongeza zaidi?",
-                "descr": "<p>Unaweza kununua salio la kuongeza la Mega Quiz kwa shilingi 11 baada ya kutumia salio unalopewa kila siku.</p>"},
-            {"title": "Je, nitatumia mbinu gani kujiondoa kwa huduma hii?",
-                "descr": "<p>Kusimamisha usajili wako wa 'Mega Quiz' bonyeza *456*20#</p>"},
-            {"title": "Sina nambari ya simu ya Safaricom. Je, nitawezaje kushiriki katika huduma hii?",
-                "descr": "Hapana, iwapo hauna nambari ya simu ya Safaricom, hautaweza kushiriki katika huduma hii.</p>"}
-            ]
+            {
+                "title": "Nitajisajili vipi?",
+                "descr": "<p>Unaweza kujisajili kwa huduma ya 'Mega Quiz' kwa:<br/>kutembelea tovuti ya https://www.megaquiz.net <br /> Tuma neno win kwa 29291 kutoka kwa nambari yako ya simu ya Safaricom</p>"
+            },
+            {
+                "title": "Je, Mega Quiz inapendelewa kuchezwa katika kivinjari kipi cha mtandao?",
+                "descr": "<p>Tunapendekeza uchezaji wa Mega Quiz katika kivinjari maalum cha Google Chrome.</p>"
+            },
+            {
+                "title": "Huduma hii itaweza kutumika kwa muda gani?",
+                "descr": "<p>Huduma hii itadumu kwa miezi mitatu na hatimaye kuanzishwa upya itakapokamilika.<p/>"
+            },
+            {
+                "title": "Washindi watapewa zawadi za aina gani?",
+                "descr": "<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>KES 500 Kila siku</li><li>KES 50,000 kila wiki </li><li>Tuzo kuu la KES 250,000</li></ul>"
+            },
+            {
+                "title": "Nitakaposhinda, nitajulishwa ujumbe huu kwa njia gani?",
+                "descr": "<p>Washindi watapokea simu kutoka kwa stesheni ya Centurion (+254 794 867 517) katika siku zinazofuata kutoa maelezo zaidi. Hiyvo basi, usiwe na shaka, kumbuka kuweka simu karibu na wewe.</p>"
+            },
+            {
+                "title": "Ninaweza kushinda zawadi ya aina moja mara ngapi?",
+                "descr": "<p> Mchezaji hawezi kutunukiwa tuzo la aina moja zaidi ya mara moja.</p>"
+            },
+            {
+                "title": "Je, ninaweza kubadilisha lugha inayotumika katika huduma hii?",
+                "descr": "<p>Kama unashiriki katika lugha ya Kiingereza na ungependa kutumia Kiswahili, tuma neno SW kwenye nambari 29291.<br><br>Kama unashiriki kataika lugha ua Kiswahili na ungependa kutumia Kiingereza, tuma neno EN kwenye Nambari 29291.</p>"
+            },
+            {
+                "title": "Ni masharti gani yanafaa kutumikiwa katika huduma hii ya Mega Quiz?",
+                "descr": "<p>Kila nafasi ya mchezo inachukuwa sekunde 55.</p><p>Kila swali lina sentensi inayokabiliwa na picha husika.</p><p>Mchezaji anafaa kutumia kidole chake kupinda kulia kukubali kwamba jibu hilo ni sahihi au kushoto kuashiria kwamba jibu si sahihi.</p><p>Kua mwangalifu! Kila jibu lisilo sahihi linaondoa sekunde 5 kwa muda uliosalia!</p><p>Unapoendelea kushiriki katika raundi tofauti, maswali spesheli yanaweza kukabidhi kwa mfano maswali ya shaba, fedha na dhahabu.</p>"
+            },
+            {
+                "title": "Je, salio langu la Mega Quiz ni halali kwa muda gani kabla litupiliwe mbali?",
+                "descr": "<p>Salio unazotunukiwa pamoja na zile unazonunua zinafaa kutumika ndani ya masaa 24. Zisipotumika katika muda huu, basi haziwezi kutumika tena baadaye.</p>"
+            },
+            {
+                "title": "Nimemaliza salio langu la siku. Je ninaweza kuongeza zaidi?",
+                "descr": "<p>Unaweza kununua salio la kuongeza la Mega Quiz kwa shilingi 11 baada ya kutumia salio unalopewa kila siku.</p>"
+            },
+            {
+                "title": "Je, nitatumia mbinu gani kujiondoa kwa huduma hii?",
+                "descr": "<p>Kusimamisha usajili wako wa 'Mega Quiz' bonyeza *456*20#</p>"
+            },
+            {
+                "title": "Sina nambari ya simu ya Safaricom. Je, nitawezaje kushiriki katika huduma hii?",
+                "descr": "Hapana, iwapo hauna nambari ya simu ya Safaricom, hautaweza kushiriki katika huduma hii.</p>"
+            }
+        ]
     },
     "END": {
+        "TODAY": "Alama za leo:",
         "MES_01": "Oops…",
         "MES_02": "Kidogo…",
         "MES_03": "Vizuri!",
@@ -141,7 +168,7 @@
         "BUY": "Cheza zaidi"
     },
     "MESSAGES": {
-        "MESSAGE_000":"Tafadhali thibitisha usajili kwa njia ya SMS uliyotumiwa na utapokea maagizo ya jinsi utakavyocheza",
+        "MESSAGE_000": "Tafadhali thibitisha usajili kwa njia ya SMS uliyotumiwa na utapokea maagizo ya jinsi utakavyocheza",
         "MESSAGE_00": "Haujanunua kikamilifu",
         "MESSAGE_01": "Lo!",
         "MESSAGE_02": "Ni lazima ujitambulishe kwa tovuti hii ili kuendelea",
@@ -161,5 +188,5 @@
         "MESSAGE_16": "Hitilafu! Tafadhali jaribu kununua tena",
         "MESSAGE_17": "Utapokea ujumbe hivi karibuni kukujulisha salio mpya pamoja na tovuti ya kucheza!",
         "MESSAGE_18": "Tayari umejisajilisha. Tafadhali subiri tovuti maalum utakayotumia kucheza"
-        }
-      }
+    }
+}

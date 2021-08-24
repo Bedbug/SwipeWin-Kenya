@@ -26,6 +26,9 @@ export class ResultComponent implements OnInit {
   get gamesPlayed(): number {
     return this._gamesPlayed;
   }
+  get getScoreToday(): number {
+    return this._totalDayScore;
+  }
   
   lblShow:boolean = true;
   passType: string = "password";
@@ -42,24 +45,27 @@ export class ResultComponent implements OnInit {
   private _firstGameToday = true;
   private _isInTop = true;
   private _bestWeekScore = 0;
+  private _totalDayScore = 0;
   
   constructor( public session: SessionService, private router: Router, private translate: TranslateService, private dataService: DataService  ) { }
 
   ngOnInit() {
     if (!this.session.lastGameResults)
       this.router.navigate(['home']);
-      
+    // console.log("Today Score: "+this.session.lastGameResults.pointsWonToday);
+    
     this._rightAnswerCount = this.session.lastGameResults.correctAnswers;
     this._wrongAnswerCount = this.session.lastGameResults.wrongAnswers;
     this._cashbackAmount = this.session.lastGameResults.cashbackWon || 0;
     this._firstTime = this.session.gamesPlayed == 1;
     this._gamesPlayed = this.session.gamesPlayed;
     this._bestWeekScore = this.session.lastGameResults.isBestScoreLastWeek;
+    this._totalDayScore = this.session.lastGameResults.pointsWonToday;
     this._isInTop = this.session.lastGameResults.isTop100;
     this.session.hasCredits = this.session.lastGameResults.userHasCredit;
     this.session.state = this.session.lastGameResults.userState;
 
-    console.table(this.session.lastGameResults);
+    // console.table(this.session.lastGameResults);
     // console.log(this.session.hasCredits);
     // if(this.session.hasCredits)
     // this.session.hasCredits = false;
@@ -73,11 +79,11 @@ export class ResultComponent implements OnInit {
     if(this._rightAnswerCount > bestScore)
       this.session.user.bestScore = this._rightAnswerCount
     
-    console.log("Games Played: "+ this._gamesPlayed);
-    console.log("cashBack Won: "+ this._cashbackAmount);
-    console.log("hasCredit: " + this.session.hasCredit());
-    console.log("Credits: " + this.session.credits);
-    console.log("State: " + this.session.state);
+    // console.log("Games Played: "+ this._gamesPlayed);
+    // console.log("cashBack Won: "+ this._cashbackAmount);
+    // console.log("hasCredit: " + this.session.hasCredit());
+    // console.log("Credits: " + this.session.credits);
+    // console.log("State: " + this.session.state);
     var modal = UIkit.modal("#result", {escClose: false, bgClose: false});
     setTimeout( () => { modal.show(); }, 1000 );
       

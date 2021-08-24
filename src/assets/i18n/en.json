@@ -12,14 +12,14 @@
         "LOGIN": "Login",
         "SUB": "Subscribe",
         "CONFIRM": "Confirm purchase",
-        "VERERROR":"The 4-digit PIN code you entered is not correct. Please try again!",
-        "VERERROR2":"Credit purchase pending!",
-        "WRONGNUM":"The number you inserted has invalid format!",
+        "VERERROR": "The 4-digit PIN code you entered is not correct. Please try again!",
+        "VERERROR2": "Credit purchase pending!",
+        "WRONGNUM": "The number you inserted has invalid format!",
         "RESEND": "Resend PIN",
         "PLAY": "Play now",
         "BUY": "Play More",
         "NOMORE": "No more games for today",
-        "FOOTER_01": "1st day free, then KES 11/day",
+        "FOOTER_01": "1st day free, then KES 11 daily",
         "FOOTER_02": "By clicking Subscription you confirm that you have ",
         "FOOTER_02b": "read and agreed to the ",
         "FOOTER_02c": "Terms & Conditions.",
@@ -57,8 +57,8 @@
         "MALE": "Male",
         "FEMALE": "Female",
         "AGE": "Age",
-        "SAVE":"Save",
-        "LOGOUT":"Log Out"
+        "SAVE": "Save",
+        "LOGOUT": "Log Out"
     },
     "HOW": {
         "HOW": "How to play",
@@ -91,8 +91,8 @@
         "BACK": "Go Back"
     },
     "TUTORIAL": {
-        "SKIP":"SKIP and PLAY",
-        "SKIP2":"PLAY",
+        "SKIP": "SKIP and PLAY",
+        "SKIP2": "PLAY",
         "MES_01": "Swipe Left or Right",
         "MES_02": "All you have to do is Swipe right<br>for Yes or left for No",
         "MES_03": "55 seconds per game",
@@ -105,31 +105,58 @@
     "FAQ": {
         "FAQ": "FAQ",
         "data": [
-            {"title": "How do I subscribe?",
-                "descr":"<p>You can subscribe to 'Mega Quiz' service by:<br />Visiting https://www.megaquiz.net <br />Send Win to 21389 from your Safaricom mobile number</p>"},
-            {"title": "What is the duration of the service?",
-                "descr":"<p>The service has 3 months duration and is renewed automatically.</p>"},
-            {"title": "What are the prizes?",
-                "descr":"<p>Mega Quiz service gives away:</p><ul><li>Daily KES 500</li><li>Weekly KES 50,000</li><li>Grand Prize KES 250,000</li></ul>"},
-            {"title": "If I win how will I be informed?",
-                "descr":"<p>The winner will be contacted by Centurion (+254 794 867 517) in the next days as to explain the process needed. So do not worry, just keep your phone on.</p>"},
-            {"title": "How many times may I win each prize?",
-                "descr":"<p>A participant may win each prize only once.</p>"},
-            {"title": "How can I change the language of participation?",
-                "descr":"<p>If you are participating in English and you want to switch to Swahili, send the keyword SW to the short-code 21389.<br><br>If you are participating in Swahili and you want to switch to English, send the keyword EN to the short-code 21389.</p>"},
-            {"title": "What are the Mega Quiz game rules?",
-                "descr":"<p>Each game lasts for 55 seconds.</p><p>Each question is consisted of a statement and a photo.</p><p>User has to Swipe right for Correct or left for Wrong.</p><p>Be careful! Every wrong reply deducts 5 seconds from the remaining time!</p><p>During a game round, special questions may also be served such as bronze, silver and golden ones.</p>"},
-            {"title": "Does my Mega Quiz credits expire?",
-                "descr":"<p>Both awarded and purchased Mega Quiz credits expire after 24 hours if not consumed until then.</p>"},
-            {"title": "I consume my daily credit, can I add more?",
-                "descr":"<p>You can purchase an extra Mega Quiz credit only for KES 11 upon consuming your available daily credit.</p>"},
-            {"title": "How can I unsubscribe?",
-                "descr":"<p>To cancel your 'Mega Quiz' subscription, dial *456*20#</p>"},
-            {"title": "I'm not a Safaricom subscriber, may I participate to the service?",
-                "descr":"<p>No, if you are not a Safaricom subscriber unfortunately you cannot subscribe to the service.</p>"}
-            ]
+            {
+                "title": "How do I subscribe?",
+                "descr": "<p>You can subscribe to 'Mega Quiz' service by:<br />Visiting https://www.megaquiz.net <br />Send Win to 29291 from your Safaricom mobile number</p>"
+            },
+            {
+                "title": "Does Mega Quiz work better on specific browser?",
+                "descr": "<p>Yes, we recommend to user Google Chrome browser</p>"
+            },
+            {
+                "title": "What is the duration of the service?",
+                "descr": "<p>The service has 3 months duration and is renewed automatically.</p>"
+            },
+            {
+                "title": "What are the prizes?",
+                "descr": "<p>Mega Quiz service gives away:</p><ul><li>Daily KES 500</li><li>Weekly KES 50,000</li><li>Grand Prize KES 250,000</li></ul>"
+            },
+            {
+                "title": "If I win how will I be informed?",
+                "descr": "<p>The winner will be contacted by Centurion (+254 794 867 517) in the next days as to explain the process needed. So do not worry, just keep your phone on.</p>"
+            },
+            {
+                "title": "How many times may I win each prize?",
+                "descr": "<p>A participant may win each prize only once.</p>"
+            },
+            {
+                "title": "How can I change the language of participation?",
+                "descr": "<p>If you are participating in English and you want to switch to Swahili, send the keyword SW to the short-code 29291.<br><br>If you are participating in Swahili and you want to switch to English, send the keyword EN to the short-code 29291.</p>"
+            },
+            {
+                "title": "What are the Mega Quiz game rules?",
+                "descr": "<p>Each game lasts for 55 seconds.</p><p>Each question is consisted of a statement and a photo.</p><p>User has to Swipe right for Correct or left for Wrong.</p><p>Be careful! Every wrong reply deducts 5 seconds from the remaining time!</p><p>During a game round, special questions may also be served such as bronze, silver and golden ones.</p>"
+            },
+            {
+                "title": "Does my Mega Quiz credits expire?",
+                "descr": "<p>Both awarded and purchased Mega Quiz credits expire after 24 hours if not consumed until then.</p>"
+            },
+            {
+                "title": "I consume my daily credit, can I add more?",
+                "descr": "<p>You can purchase an extra Mega Quiz credit only for KES 11 upon consuming your available daily credit.</p>"
+            },
+            {
+                "title": "How can I unsubscribe?",
+                "descr": "<p>To cancel your 'Mega Quiz' subscription, dial *456*20#</p>"
+            },
+            {
+                "title": "I'm not a Safaricom subscriber, may I participate to the service?",
+                "descr": "<p>No, if you are not a Safaricom subscriber unfortunately you cannot subscribe to the service.</p>"
+            }
+        ]
     },
     "END": {
+        "TODAY": "Today Score:",
         "MES_01": "Oops…",
         "MES_02": "Just…",
         "MES_03": "Good!",
@@ -161,6 +188,5 @@
         "MESSAGE_16": "There was something wrong with your purchase, please try again",
         "MESSAGE_17": "You will soon recieve an SMS with the new credit + link!",
         "MESSAGE_18": "You are already a subscriber! Please wait for your unique link to login."
-
-        }
-      }
+    }
+}
