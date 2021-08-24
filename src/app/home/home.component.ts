@@ -237,12 +237,14 @@ export class HomeComponent implements OnInit {
   }
 
   onKey(event: any){
-    // console.log(event.target.value);
+    console.log(event.target.value);
     const phoneNumber = parsePhoneNumberFromString(event.target.value, 'KE');
     // console.log(phoneNumber.);
     // console.log(phoneNumber.formatNational());
-    if(phoneNumber!=null)
-      event.target.value = phoneNumber.formatInternational();
+    if(event.target.value.indexOf("+254") == -1)
+      event.target.value = "+254"+event.target.value;
+    // if(phoneNumber!=null)
+    //   event.target.value = phoneNumber.formatInternational();
   }
   
   submit(number: string) {

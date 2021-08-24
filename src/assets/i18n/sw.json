@@ -6,7 +6,7 @@
         "CAR_02b": "kila wiki",
         "CAR_03": "Shilingi 250,000 pesa taslimu",
         "CAR_03b": "TUZO KUU",
-        "NUM": "Nambari ya simu",
+        "NUM": "+254",
         "SUB-LOG": "Jisajili/Ingia",
         "OTP": "Tafadhali bonyeza nambari yako ya siri uliyopokea kwa simu yako",
         "LOGIN": "Ingia",
@@ -91,7 +91,8 @@
         "BACK": "Rudi nyuma"
     },
     "TUTORIAL":{
-        "SKIP":"",
+        "SKIP":"Cheza moja kwa moja",
+        "SKIP2":"Cheza",
         "MES_01": "Pinda kushoto au kulia",
         "MES_02": "Unachohitajika kufanya ni kutumia kidole chako kupinda kulia<br> kusema ndio au kushoto kukataa",
         "MES_03": "Umepewa sekunde 55 kwa kila mchezo",

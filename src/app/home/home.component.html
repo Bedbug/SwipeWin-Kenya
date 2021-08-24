@@ -81,7 +81,7 @@
         style="animation-duration: 1s; animation-delay: 400ms;">
         <div class="uk-inline uk-width-1-1 ">
           <span class="uk-form-icon" uk-icon="icon: phone; ratio: 1.5"></span>
-          <input #number class="uk-input uk-border-rounded" type="text" (keyup)="onKey($event)"
+          <input #number class="uk-input uk-border-rounded" type="text" (keydown)="onKey($event)"
             placeholder="{{ 'HOME.NUM' | translate }}">
         </div>
       </div>

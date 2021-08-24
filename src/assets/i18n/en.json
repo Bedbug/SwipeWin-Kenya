@@ -6,7 +6,7 @@
         "CAR_02b": "weekly",
         "CAR_03": "250,000 KES CASH",
         "CAR_03b": "TRIMESTER PRIZE",
-        "NUM": "Mobile number",
+        "NUM": "+254",
         "SUB-LOG": "Subscribe/Login",
         "OTP": "Please enter the 4-digit PIN code received to your mobile",
         "LOGIN": "Login",
@@ -92,6 +92,7 @@
     },
     "TUTORIAL": {
         "SKIP":"SKIP and PLAY",
+        "SKIP2":"PLAY",
         "MES_01": "Swipe Left or Right",
         "MES_02": "All you have to do is Swipe right<br>for Yes or left for No",
         "MES_03": "55 seconds per game",
