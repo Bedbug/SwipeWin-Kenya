@@ -127,7 +127,8 @@ export class GameComponent implements OnInit {
       js = document.createElement("script");
       js.type = "text/javascript";
       js.id = 'Phaser';
-      js.src = 'assets/scripts/PhaserComboGame.min.js';
+      // js.src = 'assets/scripts/PhaserComboGame.min.js';
+      js.src = 'assets/scripts/PhaserComboGame.js';
       document.body.appendChild(js);
       js.onload = function() {
         that._gameInited = true;

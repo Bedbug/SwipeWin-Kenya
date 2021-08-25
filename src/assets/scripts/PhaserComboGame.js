@@ -177,6 +177,7 @@ var __phaser = {
       var globalRatio;
       var buttonsActive = true;
       var gearGroup;
+      var timerTxt;
       var g1;
       var imagesLoaded = 0;
       var that = this; //-----------------------  PRELOAD
@@ -477,16 +478,30 @@ var __phaser = {
         that.timePlus = game.add.sprite(0, 20, 'plusSec');
         that.timePlus.anchor.set(0);
         that.timePlus.alpha = 0; //  Create our Timer
+        this.timerTxt = this.game.add.text(game.camera.width, 40, "55", {
+          fontSize: 50 * globalRatio + 'px',
+          fill: '#FFF',
+          align: "center"
+        });
+        this.timerTxt.alpha = 0;
+        this.timerTxt.anchor.set(0, 0.5);
 
         demoTimer = game.time.create(false); //  Set a TimerEvent to occur every second
-
         demoTimerLoop = demoTimer.loop(1000, updateCounter, this);
         var bgMoveStep = game.camera.height * 2 / 55; // console.log(bgMoveStep);
 
         function updateCounter() {
+          
           // No Answer yet
           if (firstAnswer == true || game.logic.mainCard == null) return;
+
           game.logic.timeRemainingSeconds--;
+          this.timerTxt.alpha = 1;
+          if(Math.round(game.logic.timeRemainingSeconds < 0))
+            this.timerTxt.alpha = 0;
+          if(Math.round(game.logic.timeRemainingSeconds < 15))
+          this.timerTxt.fill = "#ff2727";
+          this.timerTxt.text = Math.round(game.logic.timeRemainingSeconds);
 
           if (game.logic.timeRemainingSeconds < 0) {
             if (!game.logic.gameIsOver) {
@@ -503,6 +518,9 @@ var __phaser = {
             }, 100, Phaser.Easing.Linear.None, true);
             game.add.tween(that.timePlus).to({
               x: newWidth - 150 * globalRatio
+            }, 300, Phaser.Easing.Linear.None, true);
+            game.add.tween(this.timerTxt).to({
+              x: newWidth - 35 * globalRatio
             }, 300, Phaser.Easing.Linear.None, true);
           }
         }
@@ -537,11 +555,11 @@ var __phaser = {
             yesLabel.alpha = .5;
             yesLabel.x = game.logic.mainCard.cardObject.x;
           }
-        } //////////////////////////////////////////////////////////////////////
+        } 
+        
+        //////////////////////////////////////////////////////////////////////
         // BUTTONS
         ///////////////////////////////////////////////////////////////////////
-
-
         // if (__phaser.game.type !== 'timefree') {
           // Yes Button
           var yesButton = game.add.sprite(game.camera.width / 2 + 250 * globalRatio, this.game.world.height / 100 * 80, 'gameYes');
@@ -694,7 +712,7 @@ var __phaser = {
                 if (demoImageLoadedCount == _this.game.logic.cards.length) {
                   CreateCards();
                   _this.gearGroup.alpha = 0;
-
+                  
                   if (__phaser.game.type === 'timefree') {
                     game.add.tween(endGameBtn).to({
                       alpha: 1
