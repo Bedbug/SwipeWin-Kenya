@@ -113,6 +113,25 @@ export class DataService {
     }
   }
 
+  authenticateCid(cidCode) {
+
+    if (!this.session.gameSettings || !this.session.gameSettings.maintenance || this.session.gameSettings.maintenance.siteDown || this.session.gameSettings.maintenance.noGames) {
+      this.router.navigate(['/home']);
+      return throwError('Game is unavailable or under maintenance');
+    }
+    else {
+      const url = encodeURI(`${environment.gameServerDomainUrl}/api/user/he-signon`);
+      const headers = {
+        'Accept': 'application/json', 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'
+      };
+
+      return this.http.post(url, { cid: cidCode }, {
+        headers: headers,
+        observe: 'response'
+      });
+    }
+  }
+
     
     
   fetchGameSettings() {
