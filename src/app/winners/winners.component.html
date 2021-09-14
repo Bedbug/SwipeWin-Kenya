@@ -8,15 +8,15 @@
   <table class="uk-table uk-table-divider">
     <thead>
       <tr >
-        <th style=" text-align: left;">{{ 'WINNERS.DATE' | translate }}</th>
+        <th >{{ 'WINNERS.DATE' | translate }}</th>
         <th >Name</th>
         <th >Phone</th>
-        <th >{{ 'WINNERS.PRIZE' | translate }}</th>
+        <th >Prize*</th>
         
       </tr>
     </thead>
     <tr *ngFor = "let winner of dailyWinners$; let i = index" [hidden]="!showDay || !dailyWinners$">
-      <td style="text-align: left;">{{winner.winDate}}</td>
+      <td >{{winner.winDate}}</td>
       <td>{{winner.username}}</td>
       <td>{{winner.msisdn}}</td>
       <td>{{winner.winSum}}</td>
@@ -24,6 +24,10 @@
     </tr>
     
   </table>
+  
+    <p style="color: black;">
+      *Withholding tax of 20% is applicable to all winnings.
+    </p>
   
   
 

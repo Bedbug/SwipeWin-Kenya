@@ -43,7 +43,7 @@ export class WinnersComponent implements OnInit {
           
           this.dailyWinners$ = data.dailyWinners;
           
-          console.log(this.dailyWinners$);
+          console.log(data.dailyWinners);
           
           
           if(this.dailyWinners$ == null || this.dailyWinners$.length == 0)
@@ -51,10 +51,10 @@ export class WinnersComponent implements OnInit {
             {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""}];
           
           else if(this.dailyWinners$[0].winDate != ""){
-            for( var i = 0; i < this.dailyWinners$.length; i++) {
-              var newDate = this.formatDate(this.dailyWinners$[i].winDate)
-              this.dailyWinners$[i].winDate = newDate.toString();
-            }
+            // for( var i = 0; i < this.dailyWinners$.length; i++) {
+            //   var newDate = this.formatDate(this.dailyWinners$[i].winDate)
+            //   this.dailyWinners$[i].winDate = newDate.toString();
+            // }
           } else {
             this.dailyWinners$ = [{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},
             {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},
@@ -64,6 +64,7 @@ export class WinnersComponent implements OnInit {
           
           
           this.monthlyWinners$ = data.monthlyWinners$;
+          
           console.log(this.monthlyWinners$);
           if(this.monthlyWinners$ == null)
             this.monthlyWinners$ = [{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""}];
@@ -71,10 +72,10 @@ export class WinnersComponent implements OnInit {
           if(this.monthlyWinners$ ==  null)
             this.monthlyWinners$ = [];
             else if(this.monthlyWinners$[0].winDate != "") {
-              for( var i = 0; i < this.monthlyWinners$.length; i++) {
-                var newDate = this.formatDate(this.monthlyWinners$[i].winDate)
-                this.monthlyWinners$[i].winDate = newDate.toString();
-              }
+              // for( var i = 0; i < this.monthlyWinners$.length; i++) {
+              //   var newDate = this.formatDate(this.monthlyWinners$[i].winDate)
+              //   this.monthlyWinners$[i].winDate = newDate.toString();
+              // }
             }
         },
         (err) => {
