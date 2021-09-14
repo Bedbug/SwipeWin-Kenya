@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
 
         } else if (msisdnCode) {// Else, Determine if this is the mobile/Ussd/Sms user flow or the WiFi one
           // Mobile/Ussd/Sms flow here
-          console.log('Mobile /SMS /USSD user flow');
+          // console.log('Mobile /SMS /USSD user flow');
           this.AutoLogin = true;
 
           this.dataService.authenticateOrangeSSO(msisdnCode).subscribe((resp: any) => {
@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
 
             // Deserialize payload
             const body: any = resp.body; // JSON.parse(response);
-            console.table(body);
+            // console.table(body);
             if (body.isEligible !== undefined)
               this.sessionService.isEligible = body.isEligible;
             if (body.isSubscribed != undefined)
@@ -179,8 +179,8 @@ export class HomeComponent implements OnInit {
             // Update the user State
             this.sessionService.state = body.state;
             // this.sessionService.state = "INACTIVE";
-            console.log(this.sessionService.state);
-            console.log("Checking Credits: " + this.sessionService.hasCredit());
+            // console.log(this.sessionService.state);
+            // console.log("Checking Credits: " + this.sessionService.hasCredit());
 
             if (body.credits > 0)
               this.sessionService.credits = body.credits;
@@ -217,7 +217,7 @@ export class HomeComponent implements OnInit {
 
             // Deserialize payload
             const body: any = resp.body; // JSON.parse(response);
-            console.table(body);
+            // console.table(body);
             if (body.isEligible !== undefined)
               this.sessionService.isEligible = body.isEligible;
             if (body.isSubscribed != undefined)
@@ -230,20 +230,18 @@ export class HomeComponent implements OnInit {
             // Update the user State
             this.sessionService.state = body.state;
             // this.sessionService.state = "INACTIVE";
-            console.log(this.sessionService.state);
-            console.log("Checking Credits: " + this.sessionService.hasCredit());
+            // console.log(this.sessionService.state);
+            // console.log("Checking Credits: " + this.sessionService.hasCredit());
 
             if (body.credits > 0)
               this.sessionService.credits = body.credits;
-
-            // console.log("hasCredit: " + this.sessionService.hasCredit());
-
 
             // Chage view state
             // this.loggedin = false;
             // this.openVerify = false;
             
-            // this.sessionService.isSubscribed = false;
+            // Check The isSubscribed property, if true go on, if not fill the input with the cidcode
+            
             if(this.sessionService.isSubscribed)
               this.router.navigate(['/returnhome']);
             else{
@@ -251,10 +249,7 @@ export class HomeComponent implements OnInit {
               this.inputValue = "+254"+ cidCode;
               return;
             }
-            //   this.openSubSuccess = true;
-            //   this.newLogin = true;
-            // }
-
+           
           },
             (err: any) => {
               this.AutoLogin = false;

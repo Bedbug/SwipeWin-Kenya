@@ -97,7 +97,7 @@ export class GameComponent implements OnInit {
       
       //check if first time and open tutorial
       var isFirst = localStorage.getItem('firstTime');
-      isFirst = "yes";
+      // isFirst = "yes";
       if(isFirst != "no"){
         this.globals.isFirstDemo = true
         localStorage.setItem('firstTime','no');

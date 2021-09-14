@@ -8,13 +8,19 @@
   <table class="uk-table uk-table-divider">
     <thead>
       <tr >
-        <th style="width:50%; text-align: left; ">{{ 'WINNERS.PRIZE' | translate }}</th>
-        <th style="width:50%">{{ 'WINNERS.DATE' | translate }}</th>
+        <th style=" text-align: left;">{{ 'WINNERS.DATE' | translate }}</th>
+        <th >Name</th>
+        <th >Phone</th>
+        <th >{{ 'WINNERS.PRIZE' | translate }}</th>
+        
       </tr>
     </thead>
     <tr *ngFor = "let winner of dailyWinners$; let i = index" [hidden]="!showDay || !dailyWinners$">
+      <td style="text-align: left;">{{winner.winDate}}</td>
+      <td>{{winner.username}}</td>
+      <td>{{winner.msisdn}}</td>
       <td>{{winner.winSum}}</td>
-      <td>{{winner.winDate}}</td>
+     
     </tr>
     
   </table>

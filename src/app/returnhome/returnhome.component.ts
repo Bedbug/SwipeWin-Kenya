@@ -58,7 +58,7 @@ export class ReturnhomeComponent implements OnInit {
 
   }
   startGame() {
-    console.log("Games Played: " + this.gamesPlayed);
+    // console.log("Games Played: " + this.gamesPlayed);
     // this.sessionService.state = "INACTIVE"
     console.log("Play Main Game!");
     this.sessionService.gamesPlayed++;
@@ -109,8 +109,8 @@ export class ReturnhomeComponent implements OnInit {
     else {
 
       this._isSubscribed = this.sessionService.isSubscribed;
-      console.log(this.sessionService.msisdn);
-      console.log("this.session " + this.sessionService.token);
+      // console.log(this.sessionService.msisdn);
+      // console.log("this.session " + this.sessionService.token);
       // this._cashBackAmount = this.sessionService._cashBackAmount;
       // this._cashBackAmount = 500;
 
@@ -123,8 +123,8 @@ export class ReturnhomeComponent implements OnInit {
           this.sessionService.user = data;
           this._gamesPlayed = this.sessionService.gamesPlayed;
 
-          console.log("this._gamesPlayed " + this._gamesPlayed);
-          console.log("this.sessionService.gamesPlayed " + this.sessionService.gamesPlayed);
+          // console.log("this._gamesPlayed " + this._gamesPlayed);
+          // console.log("this.sessionService.gamesPlayed " + this.sessionService.gamesPlayed);
 
           this.CheckCredits();
           // Set Properties here
@@ -140,7 +140,7 @@ export class ReturnhomeComponent implements OnInit {
   }
 
   CheckCredits() {
-    console.log("Checking Credits: " + this.sessionService.hasCredit());
+    // console.log("Checking Credits: " + this.sessionService.hasCredit());
 
     this.sessionService.hasCredit();
 
@@ -154,7 +154,7 @@ export class ReturnhomeComponent implements OnInit {
     } else {
       // If not
       this.dataService.purchaseCreditRequest().subscribe((resp: any) => {
-        console.log(resp);
+        // console.log(resp);
         // Change Session state 
         this.sessionService.state = "PENDING";
         // Open Modal
