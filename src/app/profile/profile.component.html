@@ -55,9 +55,15 @@
     <div class="uk-width-auto amount">{{_cashBackAmount}} $<span uk-icon="chevron-right"></span></div> -->
   </div>
   <div class="days-summary" uk-grid >
+    <div class="uk-width-expand label">{{ 'PROFILE.CREDITS' | translate }}</div>
+    <!--Games in the game-->
+    <div class="uk-width-auto" style="font-size: 30px;font-weight: bold;color: #ffffff;">{{_credits}}</div>
+  </div>
+  <div class="days-summary" uk-grid >
     <div class="uk-width-expand label">{{ 'PROFILE.DAYS' | translate }}</div>
     <!--Games in the game-->
     <div class="uk-width-auto" style="font-size: 30px;font-weight: bold;color: #ffffff;">{{_daysInGame}}</div>
+    
   </div>
   <div class="buttons-container uk-container uk-text-center">
     <!--Go to Settings-->

@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
   private _bestResultToday = 0;
   public _cashBackAmount = 0;
   public _daysInGame = 0;
-  
+  public _credits = 0;
   public showAvatar = true;
   
   public avatarPic="assets/images/avatar.svg";
@@ -74,13 +74,18 @@ export class ProfileComponent implements OnInit {
     else {
       this.dataService.getUserProfile().then( 
         (data:User) => {
+
+          console.table(data);
+          
           this.sessionService.user = data;
           this.userName = data.username;
           this._totalGamesCount = data.gamesPlayed;
           this._bestResultAllTime = data.bestScore;
           this._bestResultToday = data.bestScoreToday;
           this._daysInGame = data.totalDaysPlaying;
+          console.log(data.credits);
           
+          this._credits = data.credits;
           if(this._daysInGame == null)
             this._daysInGame = 0;
             
