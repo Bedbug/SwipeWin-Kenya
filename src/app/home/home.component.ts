@@ -10,7 +10,11 @@ import { debug } from 'util';
 import { TranslateService } from '@ngx-translate/core';
 import { parsePhoneNumberFromString } from 'libphonenumber-js'
 
-
+declare global {
+  interface Window {
+      dataLayer:any;
+  }
+}
 // import * as libphonenumber from 'google-libphonenumber';
 
 @Component({
@@ -314,6 +318,7 @@ export class HomeComponent implements OnInit {
 
     if (number.length != 12) {
       this.alertNumber = true;
+      window.dataLayer.push({ event:"User_Attempt_MSISDN", label:"msisdn_error_length" }); // Event for wrong msisdn
       return;
     }
     //this.showLogin = false;
@@ -345,6 +350,9 @@ export class HomeComponent implements OnInit {
       console.log(this.sessionService.state);
 
       console.log("Is Subed: " + this.sessionService.isSubscribed);
+
+      if(!this.sessionService.isSubscribed)
+      window.dataLayer.push({"event":"User_Enter_MSISDN", "msisdn": this.sessionService.msisdn}); // Event for success msisdn
       this.openVerify = true;
 
       // If present, Get JWT token from response header and keep it for the session
@@ -418,7 +426,7 @@ export class HomeComponent implements OnInit {
       this.loggedin = true;
       this.openVerify = false;
       this.openSubSuccess = true;
-
+      window.dataLayer.push({"event":"User_Subscribed", "msisdn": this.sessionService.msisdn}); // Event for success subscribtion
       // this.CheckCredits();
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);
@@ -466,13 +474,14 @@ export class HomeComponent implements OnInit {
       else
         this.newLogin = true;
       // this.router.navigate(['/returnhome']);
-
+      window.dataLayer.push({ event:"User_Attempt_PIN", label:"pin_correct"}); // Event for correct pin
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);
     },
       (err: any) => {
         console.log("Error With Pin!!!");
         this.verErrorMes = true;
+        window.dataLayer.push({ event:"User_Attempt_PIN", label:"pin_error"}); // Event for correct msisdn
       });
 
     // Run or Go to returnHome
