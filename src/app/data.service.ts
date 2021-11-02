@@ -72,6 +72,21 @@ export class DataService {
     }
   }
 
+  utmNotify(msisdn, utm_source, utm_medium, utm_campaign, utm_content) {
+
+    const url = encodeURI(`${environment.gameServerDomainUrl}/api/user/utm-notify`);
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    };
+
+    return this.http.post(url, { msisdn: msisdn, utm_source: utm_source, utm_medium: utm_medium, utm_campaign: utm_campaign, utm_content:utm_content}, {
+      headers: headers,
+      observe: 'response'
+    });
+  
+}
 
   requestPin(msisdn) {
 

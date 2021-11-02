@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { SessionService } from '../session.service';
 import { LocalizationService } from '../localization.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { DefaultUrlSerializer, Router, ActivatedRoute } from '@angular/router';
+import { UrlTree } from '@angular/router';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import UIkit from 'uikit';
 import { createPipeInstance } from '@angular/core/src/view/provider';
@@ -12,7 +14,7 @@ import { parsePhoneNumberFromString } from 'libphonenumber-js'
 
 declare global {
   interface Window {
-      dataLayer:any;
+    dataLayer: any;
   }
 }
 // import * as libphonenumber from 'google-libphonenumber';
@@ -20,7 +22,8 @@ declare global {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }]
 })
 export class HomeComponent implements OnInit {
   loginOn: number;
@@ -36,7 +39,7 @@ export class HomeComponent implements OnInit {
   verErrorMes: boolean = false;
   isEng: boolean = true;
 
-  public inputValue: string  = "";
+  public inputValue: string = "";
 
   // get this form the User object
   get isHasCashback(): boolean {
@@ -78,6 +81,7 @@ export class HomeComponent implements OnInit {
   public showConfirm: boolean = false;
 
   constructor(
+    private location: Location,
     private dataService: DataService,
     private sessionService: SessionService,
     private localizationService: LocalizationService,
@@ -99,6 +103,35 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
+    let utm_source = null;
+    let utm_medium = null;
+    let utm_campaign = null;
+    let utm_content = null;
+
+    // UTMs
+    var urlSer = new DefaultUrlSerializer();
+    console.log('incoming path from Ath: ' + this.location.path());
+    var urlTree: UrlTree = urlSer.parse(this.location.path());
+    console.log('Url Tree : ' + urlTree);
+
+    utm_source = urlTree.queryParams["utm_source"];
+    utm_medium = urlTree.queryParams["utm_medium"];
+    utm_campaign = urlTree.queryParams["utm_campaign"];
+    utm_content = urlTree.queryParams["utm_content"];
+    console.log("Check Params!");
+
+    if(utm_source != null){
+      console.log("Saving Params!");
+      localStorage.setItem('utm_source', utm_source);
+      localStorage.setItem('utm_medium', utm_medium);
+      localStorage.setItem('utm_campaign', utm_campaign);
+      localStorage.setItem('utm_content', utm_content); // Clear these after success to endpoint
+      console.log("utm_source: "+utm_source);
+      console.log("utm_medium: "+utm_medium);
+      console.log("utm_campaign: "+utm_campaign);
+      console.log("utm_content: "+utm_content);
+    }
+
     console.log(this.translate.currentLang);
     if (this.translate.currentLang == 'en')
       this.isEng = true;
@@ -109,6 +142,7 @@ export class HomeComponent implements OnInit {
     this.loginOn = 0;
     this.openSubSuccess = false;
 
+    
 
     // Detect if a unique link exists in the home path
     // implemented after https://medium.com/@tomastrajan/how-to-get-route-path-parameters-in-non-routed-angular-components-32fc90d9cb52
@@ -128,7 +162,7 @@ export class HomeComponent implements OnInit {
 
     // if (cidCode)
     //   console.log("cidCode: " + cidCode);
-      
+
 
     // Load the game settings
     this.dataService.fetchGameSettings().then(
@@ -243,17 +277,17 @@ export class HomeComponent implements OnInit {
             // Chage view state
             // this.loggedin = false;
             // this.openVerify = false;
-            
+
             // Check The isSubscribed property, if true go on, if not fill the input with the cidcode
-            
-            if(this.sessionService.isSubscribed)
+
+            if (this.sessionService.isSubscribed)
               this.router.navigate(['/returnhome']);
-            else{
+            else {
               // Autofill the input with the cidCode
-              this.inputValue = "+254"+ cidCode;
+              this.inputValue = "+254" + cidCode;
               return;
             }
-           
+
           },
             (err: any) => {
               this.AutoLogin = false;
@@ -318,7 +352,7 @@ export class HomeComponent implements OnInit {
 
     if (number.length != 12) {
       this.alertNumber = true;
-      window.dataLayer.push({ event:"User_Attempt_MSISDN", label:"msisdn_error_length" }); // Event for wrong msisdn
+      window.dataLayer.push({ event: "User_Attempt_MSISDN", label: "msisdn_error_length" }); // Event for wrong msisdn
       return;
     }
     //this.showLogin = false;
@@ -351,8 +385,8 @@ export class HomeComponent implements OnInit {
 
       console.log("Is Subed: " + this.sessionService.isSubscribed);
 
-      if(!this.sessionService.isSubscribed)
-      window.dataLayer.push({"event":"User_Enter_MSISDN", "msisdn": this.sessionService.msisdn}); // Event for success msisdn
+      if (!this.sessionService.isSubscribed)
+        window.dataLayer.push({ "event": "User_Enter_MSISDN", "msisdn": this.sessionService.msisdn }); // Event for success msisdn
       this.openVerify = true;
 
       // If present, Get JWT token from response header and keep it for the session
@@ -426,7 +460,7 @@ export class HomeComponent implements OnInit {
       this.loggedin = true;
       this.openVerify = false;
       this.openSubSuccess = true;
-      window.dataLayer.push({"event":"User_Subscribed", "msisdn": this.sessionService.msisdn}); // Event for success subscribtion
+      window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success subscribtion
       // this.CheckCredits();
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);
@@ -474,14 +508,14 @@ export class HomeComponent implements OnInit {
       else
         this.newLogin = true;
       // this.router.navigate(['/returnhome']);
-      window.dataLayer.push({ event:"User_Attempt_PIN", label:"pin_correct"}); // Event for correct pin
+      window.dataLayer.push({ event: "User_Attempt_PIN", label: "pin_correct" }); // Event for correct pin
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);
     },
       (err: any) => {
         console.log("Error With Pin!!!");
         this.verErrorMes = true;
-        window.dataLayer.push({ event:"User_Attempt_PIN", label:"pin_error"}); // Event for correct msisdn
+        window.dataLayer.push({ event: "User_Attempt_PIN", label: "pin_error" }); // Event for correct msisdn
       });
 
     // Run or Go to returnHome

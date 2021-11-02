@@ -4,6 +4,7 @@ import { SessionService } from '../session.service';
 import { Router } from '@angular/router';
 import UIkit from 'uikit';
 import { TranslateService } from '@ngx-translate/core';
+import { locateHostElement } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-returnhome',
@@ -96,7 +97,7 @@ export class ReturnhomeComponent implements OnInit {
     if (!this.sessionService.token || !this.sessionService.isSubscribed || !this.sessionService.isEligible || this.sessionService.isUnsub()) {
       // wanna inform the user here?
       // if (this.sessionService.isUnsub())
-        this.router.navigate(['/home']);
+      this.router.navigate(['/home']);
       // else {
       //   // Redirect him to Home
       //   this.router.navigate(['/home'], { queryParams: { errorCode: 401 } });
@@ -109,27 +110,53 @@ export class ReturnhomeComponent implements OnInit {
     else {
 
       this._isSubscribed = this.sessionService.isSubscribed;
-      // console.log(this.sessionService.msisdn);
-      // console.log("this.session " + this.sessionService.token);
-      // this._cashBackAmount = this.sessionService._cashBackAmount;
-      // this._cashBackAmount = 500;
 
-      // TOBE ERASED
-      // This resets the games played every time
+
+
 
 
       this.dataService.getUserProfile().then(
         (data: User) => {
+          console.log(data);
+
           this.sessionService.user = data;
           this._gamesPlayed = this.sessionService.gamesPlayed;
 
-          // console.log("this._gamesPlayed " + this._gamesPlayed);
-          // console.log("this.sessionService.gamesPlayed " + this.sessionService.gamesPlayed);
+          // Check UTMS & send them
+          let utm_source = null;
+          let utm_medium = null;
+          let utm_campaign = null;
+          let utm_content = null;
+
+          console.log("Loading Params!");
+
+          utm_source = localStorage.getItem('utm_source');
+          utm_medium = localStorage.getItem('utm_medium');
+          utm_campaign = localStorage.getItem('utm_campaign');
+          utm_content = localStorage.getItem('utm_content');
+
+          if (utm_source == null || utm_source == "") {
+            console.log("No Params!");
+          } else {
+            console.log("Found Params!");
+            // Do the request
+            this.dataService.utmNotify(data.msisdn, utm_source, utm_medium, utm_campaign, utm_content).subscribe(resp => {
+              // Deserialize payload
+              const body: any = resp.body; // JSON.parse(response);
+              console.log(body);
+              // Clear Local Storage
+              localStorage.setItem('utm_source', "");
+              localStorage.setItem('utm_medium', "");
+              localStorage.setItem('utm_campaign', "");
+              localStorage.setItem('utm_content', "");
+            },
+              err => {
+
+              });
+          }
 
           this.CheckCredits();
-          // Set Properties here
-          // this._gamesPlayed = 3;
-          // this._cashBackAmount = this.sessionService.user.wallet.pendingMaturityCashback + this.sessionService.user.wallet.pendingTransferCashback;
+
         },
         (err) => {
 
