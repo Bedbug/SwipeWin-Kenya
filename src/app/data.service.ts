@@ -72,7 +72,7 @@ export class DataService {
     }
   }
 
-  utmNotify(msisdn, utm_source, utm_medium, utm_campaign, utm_content) {
+  utmNotify(msisdn, utm_source, utm_medium, utm_campaign, utm_content, utm_term, utm_id) {
 
     const url = encodeURI(`${environment.gameServerDomainUrl}/api/user/utm-notify`);
     const headers = {
@@ -81,7 +81,7 @@ export class DataService {
       'Access-Control-Allow-Origin': '*'
     };
 
-    return this.http.post(url, { msisdn: msisdn, utm_source: utm_source, utm_medium: utm_medium, utm_campaign: utm_campaign, utm_content:utm_content}, {
+    return this.http.post(url, { msisdn: msisdn, utm_source: utm_source, utm_medium: utm_medium, utm_campaign: utm_campaign, utm_content: utm_content, utm_term: utm_term, utm_id: utm_id}, {
       headers: headers,
       observe: 'response'
     });
