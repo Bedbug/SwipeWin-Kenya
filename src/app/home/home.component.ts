@@ -107,6 +107,8 @@ export class HomeComponent implements OnInit {
     let utm_medium = null;
     let utm_campaign = null;
     let utm_content = null;
+    let utm_term = null;
+    let utm_id = null;
 
     // UTMs
     var urlSer = new DefaultUrlSerializer();
@@ -118,6 +120,8 @@ export class HomeComponent implements OnInit {
     utm_medium = urlTree.queryParams["utm_medium"];
     utm_campaign = urlTree.queryParams["utm_campaign"];
     utm_content = urlTree.queryParams["utm_content"];
+    utm_term = urlTree.queryParams["utm_term"];
+    utm_id = urlTree.queryParams["utm_id"];
     console.log("Check Params!");
 
     if(utm_source != null){
@@ -126,10 +130,15 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('utm_medium', utm_medium);
       localStorage.setItem('utm_campaign', utm_campaign);
       localStorage.setItem('utm_content', utm_content); // Clear these after success to endpoint
+      localStorage.setItem('utm_term', utm_campaign);
+      localStorage.setItem('utm_id', utm_content);
+      
       console.log("utm_source: "+utm_source);
       console.log("utm_medium: "+utm_medium);
       console.log("utm_campaign: "+utm_campaign);
       console.log("utm_content: "+utm_content);
+      console.log("utm_term: "+utm_campaign);
+      console.log("utm_id: "+utm_content);
     }
 
     console.log(this.translate.currentLang);

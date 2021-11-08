@@ -111,10 +111,6 @@ export class ReturnhomeComponent implements OnInit {
 
       this._isSubscribed = this.sessionService.isSubscribed;
 
-
-
-
-
       this.dataService.getUserProfile().then(
         (data: User) => {
           console.log(data);
@@ -127,20 +123,23 @@ export class ReturnhomeComponent implements OnInit {
           let utm_medium = null;
           let utm_campaign = null;
           let utm_content = null;
+          let utm_term = null;
+          let utm_id = null;
 
           console.log("Loading Params!");
-
           utm_source = localStorage.getItem('utm_source');
           utm_medium = localStorage.getItem('utm_medium');
           utm_campaign = localStorage.getItem('utm_campaign');
           utm_content = localStorage.getItem('utm_content');
+          utm_term = localStorage.getItem('utm_term');
+          utm_id = localStorage.getItem('utm_od');
 
           if (utm_source == null || utm_source == "") {
             console.log("No Params!");
           } else {
             console.log("Found Params!");
             // Do the request
-            this.dataService.utmNotify(data.msisdn, utm_source, utm_medium, utm_campaign, utm_content).subscribe(resp => {
+            this.dataService.utmNotify(data.msisdn, utm_source, utm_medium, utm_campaign, utm_content, utm_term, utm_id).subscribe(resp => {
               // Deserialize payload
               const body: any = resp.body; // JSON.parse(response);
               console.log(body);
@@ -149,6 +148,8 @@ export class ReturnhomeComponent implements OnInit {
               localStorage.setItem('utm_medium', "");
               localStorage.setItem('utm_campaign', "");
               localStorage.setItem('utm_content', "");
+              localStorage.setItem('utm_term', "");
+              localStorage.setItem('utm_id', "");
             },
               err => {
 
