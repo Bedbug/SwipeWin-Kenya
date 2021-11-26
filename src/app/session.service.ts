@@ -42,6 +42,7 @@ export class SessionService implements OnDestroy {
   
   // tells whether the user has ever subscribed to the service
   isSubscribed: boolean = false;
+  isOptin: boolean = true;
   // tells whether the user has ever subscribed to the service
   // isPending: boolean = false;
   

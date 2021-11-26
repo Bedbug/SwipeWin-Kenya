@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit {
     utm_id = urlTree.queryParams["utm_id"];
     console.log("Check Params!");
 
-    if(utm_source != null){
+    if (utm_source != null) {
       console.log("Saving Params!");
       localStorage.setItem('utm_source', utm_source);
       localStorage.setItem('utm_medium', utm_medium);
@@ -132,13 +132,13 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('utm_content', utm_content); // Clear these after success to endpoint
       localStorage.setItem('utm_term', utm_campaign);
       localStorage.setItem('utm_id', utm_content);
-      
-      console.log("utm_source: "+utm_source);
-      console.log("utm_medium: "+utm_medium);
-      console.log("utm_campaign: "+utm_campaign);
-      console.log("utm_content: "+utm_content);
-      console.log("utm_term: "+utm_campaign);
-      console.log("utm_id: "+utm_content);
+
+      console.log("utm_source: " + utm_source);
+      console.log("utm_medium: " + utm_medium);
+      console.log("utm_campaign: " + utm_campaign);
+      console.log("utm_content: " + utm_content);
+      console.log("utm_term: " + utm_campaign);
+      console.log("utm_id: " + utm_content);
     }
 
     console.log(this.translate.currentLang);
@@ -151,7 +151,7 @@ export class HomeComponent implements OnInit {
     this.loginOn = 0;
     this.openSubSuccess = false;
 
-    
+
 
     // Detect if a unique link exists in the home path
     // implemented after https://medium.com/@tomastrajan/how-to-get-route-path-parameters-in-non-routed-angular-components-32fc90d9cb52
@@ -379,6 +379,7 @@ export class HomeComponent implements OnInit {
 
       // Deserialize payload
       const body: any = resp.body; // JSON.parse(response);
+      console.log(resp.body);
       if (body.isEligible !== undefined)
         this.sessionService.isEligible = body.isEligible;
       if (body.isSubscribed != undefined)
@@ -388,6 +389,12 @@ export class HomeComponent implements OnInit {
       if (body.hasCredit !== undefined)
         this.sessionService.hasCredits = body.hasCredit;
 
+      if (body.optIn !== undefined)
+        this.sessionService.isOptin = body.optIn;
+      console.log("Optin: " + this.sessionService.isOptin);
+
+      // this.sessionService.isSubscribed = false;
+      // this.sessionService.isOptin = false;
       // Update the user State
       this.sessionService.state = body.state;
       console.log(this.sessionService.state);
@@ -396,7 +403,12 @@ export class HomeComponent implements OnInit {
 
       if (!this.sessionService.isSubscribed)
         window.dataLayer.push({ "event": "User_Enter_MSISDN", "msisdn": this.sessionService.msisdn }); // Event for success msisdn
+
+      // OPENS THE PIN VERIFY
       this.openVerify = true;
+
+      // CHECK IF USER IS OPTOUT
+      // get isOptout and use it as !isUsbscribed in PIN VERIFICATION (open the Sub Button)
 
       // If present, Get JWT token from response header and keep it for the session
       const userToken = resp.headers.get('X-Access-Token');
@@ -469,7 +481,15 @@ export class HomeComponent implements OnInit {
       this.loggedin = true;
       this.openVerify = false;
       this.openSubSuccess = true;
-      window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success subscribtion
+
+      if (this.sessionService.isOptin)
+        window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success subscribtion
+      else if (!this.sessionService.isOptin){
+        // window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success Re - subscribtion
+        window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn, "label": "pin_correct_resub" }); // Re - subscribtion
+        this.sessionService.isOptin = true;
+      }
+
       // this.CheckCredits();
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);

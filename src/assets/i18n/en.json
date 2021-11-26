@@ -11,6 +11,7 @@
         "OTP": "Please enter the 4-digit PIN code received to your mobile",
         "LOGIN": "Login",
         "SUB": "Subscribe",
+        "RESUB": "Re-Subscribe",
         "CONFIRM": "Confirm purchase",
         "VERERROR": "The 4-digit PIN code you entered is not correct. Please try again!",
         "VERERROR2": "Credit purchase pending!",

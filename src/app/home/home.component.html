@@ -121,10 +121,11 @@
 
     <div class="buttons-container uk-container uk-text-center">
       <p *ngIf="verErrorMes" style="font-size: 12px; color: white;">{{ 'HOME.VERERROR' | translate }}</p>
-      <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="sessionService.isSubscribed"
-        (click)="verifyDirect(pin.value)">{{ 'HOME.LOGIN' | translate }}</button>
-      <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="!sessionService.isSubscribed"
-        (click)="verify(pin.value)">{{ 'HOME.SUB' | translate }}</button>
+      <!-- Subed && Optin -->
+      <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="sessionService.isSubscribed && sessionService.isOptin" (click)="verifyDirect(pin.value)">{{ 'HOME.LOGIN' | translate }}</button>
+      <!-- Subed && Optin -->
+      <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="sessionService.isSubscribed && !sessionService.isOptin" (click)="verify(pin.value)">{{ 'HOME.RESUB' | translate }}</button>
+      <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="!sessionService.isSubscribed && !sessionService.isOptin" (click)="verify(pin.value)">{{ 'HOME.SUB' | translate }}</button>
     </div>
     <div class="message-container" style="margin-top: 30px;">
       <p style="color:rgb(0, 0, 0); font-weight: bold; font-size: 20px;"><a (click)="resetPin()"
