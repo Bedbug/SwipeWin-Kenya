@@ -233,8 +233,6 @@ export class HomeComponent implements OnInit {
               this.sessionService.credits = body.credits;
 
             // console.log("hasCredit: " + this.sessionService.hasCredit());
-
-
             // Chage view state
             this.loggedin = true;
             this.openVerify = false;
@@ -361,7 +359,7 @@ export class HomeComponent implements OnInit {
 
     if (number.length != 12) {
       this.alertNumber = true;
-      window.dataLayer.push({ event: "User_Attempt_MSISDN", label: "msisdn_error_length" }); // Event for wrong msisdn
+      window.dataLayer.push({ "event": "User_Attempt_MSISDN", "label": "msisdn_error_length" }); // Event for wrong msisdn
       return;
     }
     //this.showLogin = false;
@@ -537,14 +535,14 @@ export class HomeComponent implements OnInit {
       else
         this.newLogin = true;
       // this.router.navigate(['/returnhome']);
-      window.dataLayer.push({ event: "User_Attempt_PIN", label: "pin_correct" }); // Event for correct pin
+      window.dataLayer.push({ "event": "User_Attempt_PIN", "label": "pin_correct" }); // Event for correct pin
       // Goto the returnHome page
       //this.router.navigate(['/returnhome']);
     },
       (err: any) => {
         console.log("Error With Pin!!!");
         this.verErrorMes = true;
-        window.dataLayer.push({ event: "User_Attempt_PIN", label: "pin_error" }); // Event for correct msisdn
+        window.dataLayer.push({ event: "User_Attempt_PIN", "label": "pin_error" }); // Event for correct msisdn
       });
 
     // Run or Go to returnHome
