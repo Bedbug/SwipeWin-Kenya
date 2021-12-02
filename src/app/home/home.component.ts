@@ -484,7 +484,7 @@ export class HomeComponent implements OnInit {
         window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success subscribtion
       else if (!this.sessionService.isOptin){
         // window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn }); // Event for success Re - subscribtion
-        window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn, "label": "pin_correct_resub" }); // Re - subscribtion
+        window.dataLayer.push({ "event": "User_Subscribed", "msisdn": this.sessionService.msisdn, "label": "msisdn_resub" }); // Re - subscribtion
         this.sessionService.isOptin = true;
       }
 
