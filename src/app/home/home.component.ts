@@ -542,7 +542,7 @@ export class HomeComponent implements OnInit {
       (err: any) => {
         console.log("Error With Pin!!!");
         this.verErrorMes = true;
-        window.dataLayer.push({ event: "User_Attempt_PIN", "label": "pin_error" }); // Event for correct msisdn
+        window.dataLayer.push({ "event": "User_Attempt_PIN", "label": "pin_error" }); // Event for correct msisdn
       });
 
     // Run or Go to returnHome
