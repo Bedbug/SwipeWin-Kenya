@@ -20,11 +20,12 @@
     <!--If there are available games to buy play another game-->
 
     <br>
-    <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close" *ngIf="this.session.hasCredit()"
+    <p style="text-align: center;font-size: 21px;color: white;">{{ 'END.TEXT_01' | translate }}</p>
+    <!-- <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close" *ngIf="this.session.hasCredit()"
       (click)="startGame()">{{ 'END.PLAY' | translate }}</button>
     <p *ngIf="verErrorMes2" style="font-size: 12px; color: rgb(32, 32, 32);">{{ 'HOME.VERERROR2' | translate }}</p>
     <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close"
-      *ngIf="!this.session.hasCredit()" (click)="OpenOTPPurchase()">{{ 'END.BUY' | translate }}</button>
+      *ngIf="!this.session.hasCredit()" (click)="OpenOTPPurchase()">{{ 'END.BUY' | translate }}</button> -->
 
     <button class="uk-button uk-button-default play-button uk-width-1-1 uk-modal-close" (click)="returnHome()">{{
       'END.BACK' | translate }}</button>

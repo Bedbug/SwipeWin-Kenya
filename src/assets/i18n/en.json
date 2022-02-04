@@ -167,7 +167,8 @@
         "MES_06": "Correct Answers",
         "PLAY": "Play Again",
         "BACK": "Back to home page",
-        "BUY": "Play More"
+        "BUY": "Play More",
+        "TEXT_01" : "Thank you for playing! Please come back tomorrow to play more upon your subscription renewal."
     },
     "MESSAGES": {
         "MESSAGE_000": "Please confirm the service via SMS received & soon you will receive instructions for the game",

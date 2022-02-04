@@ -167,7 +167,8 @@
         "MES_06": "Majibu Sahihi",
         "PLAY": "Cheza tena",
         "BACK": "Rudi kwenye ukurasa wa nyumbani",
-        "BUY": "Cheza zaidi"
+        "BUY": "Cheza zaidi",
+        "TEXT_01" : "Ahsante kwa kuwa mchezaji wa Mega Quiz! Ikiwa ungependa kucheza zaidi, tafadhali subiri nafasi nyingine kesho!"
     },
     "MESSAGES": {
         "MESSAGE_000": "Tafadhali thibitisha usajili kwa njia ya SMS uliyotumiwa na utapokea maagizo ya jinsi utakavyocheza",
