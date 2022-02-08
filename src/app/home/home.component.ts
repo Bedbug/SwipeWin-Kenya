@@ -296,7 +296,7 @@ export class HomeComponent implements OnInit {
               // Autofill the input with the cidCode
               console.log("UnSubed User!");
               console.log("+254" + cidCode);
-              this.inputValue =  cidCode;
+              this.inputValue = "+"+ cidCode;
               return;
             }
 
@@ -304,7 +304,7 @@ export class HomeComponent implements OnInit {
             (err: any) => {
               this.AutoLogin = false;
               // this.router.navigate(['/home']);
-              this.inputValue =  cidCode;
+              this.inputValue =  "+"+ cidCode;;
             });
         }
 
