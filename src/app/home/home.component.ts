@@ -172,6 +172,7 @@ export class HomeComponent implements OnInit {
     // if (cidCode)
     //   console.log("cidCode: " + cidCode);
 
+    // this.inputValue =  cidCode;
 
     // Load the game settings
     this.dataService.fetchGameSettings().then(
@@ -295,7 +296,7 @@ export class HomeComponent implements OnInit {
               // Autofill the input with the cidCode
               console.log("UnSubed User!");
               console.log("+254" + cidCode);
-              this.inputValue = "+254" + cidCode;
+              this.inputValue =  cidCode;
               return;
             }
 
@@ -303,7 +304,7 @@ export class HomeComponent implements OnInit {
             (err: any) => {
               this.AutoLogin = false;
               // this.router.navigate(['/home']);
-              this.inputValue = "+254" + cidCode;
+              this.inputValue =  cidCode;
             });
         }
 
