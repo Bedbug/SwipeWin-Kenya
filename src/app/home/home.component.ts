@@ -262,7 +262,7 @@ export class HomeComponent implements OnInit {
 
             // Deserialize payload
             const body: any = resp.body; // JSON.parse(response);
-            // console.table(body);
+            console.table(body);
             if (body.isEligible !== undefined)
               this.sessionService.isEligible = body.isEligible;
             if (body.isSubscribed != undefined)
@@ -271,7 +271,9 @@ export class HomeComponent implements OnInit {
               this.sessionService.gamesPlayed = body.gamesPlayedToday;
             if (body.hasCredit !== undefined)
               this.sessionService.hasCredits = body.hasCredit;
-
+            if(body.optIn !== undefined)
+              this.sessionService.isOptin = body.optIn;
+            
             // Update the user State
             this.sessionService.state = body.state;
             // this.sessionService.state = "INACTIVE";
@@ -287,10 +289,12 @@ export class HomeComponent implements OnInit {
 
             // Check The isSubscribed property, if true go on, if not fill the input with the cidcode
 
-            if (this.sessionService.isSubscribed)
+            if (this.sessionService.isSubscribed && this.sessionService.isOptin && this.sessionService.state!="UNSUB")
               this.router.navigate(['/returnhome']);
             else {
               // Autofill the input with the cidCode
+              console.log("UnSubed User!");
+              console.log("+254" + cidCode);
               this.inputValue = "+254" + cidCode;
               return;
             }
@@ -298,13 +302,15 @@ export class HomeComponent implements OnInit {
           },
             (err: any) => {
               this.AutoLogin = false;
-              this.router.navigate(['/home']);
+              // this.router.navigate(['/home']);
+              this.inputValue = "+254" + cidCode;
             });
         }
 
         else {
           // WiFi flow here
           console.log('WiFi user flow');
+          
         }
       },
       (err: any) => {
