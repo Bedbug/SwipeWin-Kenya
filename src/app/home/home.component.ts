@@ -290,15 +290,27 @@ export class HomeComponent implements OnInit {
 
             // Check The isSubscribed property, if true go on, if not fill the input with the cidcode
 
-            if (this.sessionService.isSubscribed && this.sessionService.isOptin && this.sessionService.state!="UNSUB")
+            //TEST------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // this.sessionService.isSubscribed = true;
+            // this.sessionService.isOptin = false;
+
+            if (this.sessionService.isSubscribed 
+              // && this.sessionService.isOptin 
+              && this.sessionService.state!="UNSUB")
               this.router.navigate(['/returnhome']);
             else {
-              // Autofill the input with the cidCode
-              console.log("UnSubed User!");
-              console.log("+254" + cidCode);
-              this.inputValue = "+"+ cidCode;
+              this.loggedin = true;
+              this.openVerify = false;
+              this.openSubSuccess = true;
               return;
             }
+            // else {
+            //   // Autofill the input with the cidCode
+            //   console.log("UnSubed User!");
+            //   console.log("+254" + cidCode);
+            //   this.inputValue = "+"+ cidCode;
+            //   return;
+            // }
 
           },
             (err: any) => {
