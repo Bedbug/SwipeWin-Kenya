@@ -29,7 +29,8 @@
         "SUB_SUC_01": "You have successfully",
         "SUB_SUC_02": "subscribed to Mega Quiz",
         "SUB_SUC_03": "Continue",
-        "SUB_SUC_04": "Reedem your free round"
+        "SUB_SUC_04": "Reedem your free round", 
+        "BUYSMS": "Please send 'MORE' to 29291 to receive the new game's credit + link"
     },
     "BURGER": {
         "HOME": "Home",
