@@ -115,6 +115,7 @@
             {
                 "title": "Does Mega Quiz work better on specific browser?",
                 "descr": "<p>Yes, we recommend to user Google Chrome browser</p>"
+                
             },
             {
                 "title": "What is the duration of the service?",
@@ -122,7 +123,7 @@
             },
             {
                 "title": "What are the prizes?",
-                "descr": "<p>Mega Quiz service gives away:</p><ul><li>Daily Airtime KES 100 to 60 winners</li><li>Weekly KES 25,000</li></ul>"
+                "descr": "<p>Mega Quiz service gives away:</p><ul><li>Daily Airtime KES 100 to 60 winners</li><li>Weekly KES 25,000</li></ul> "
             },
             {
                 "title": "If I win how will I be informed?",
