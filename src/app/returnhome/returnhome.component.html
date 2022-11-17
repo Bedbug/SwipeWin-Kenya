@@ -81,7 +81,7 @@
       <div class="buttons-container uk-container uk-text-center">
         <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="loggedin &&  this.sessionService.isActive() && this.sessionService.hasCredit()" (click)="startGame()">{{ 'HOME.PLAY' | translate }}</button>
         <p *ngIf="verErrorMes2" style="font-size: 12px; color: rgb(32, 32, 32);">{{ 'HOME.VERERROR2' | translate }}</p>
-        <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="loggedin &&  this.sessionService.isActive() && !this.sessionService.hasCredit()" (click)="OpenOTPPurchase()">{{ 'HOME.BUY' | translate }}</button>
+        <!-- <button class="uk-button uk-button-default play-button uk-width-1-1" *ngIf="loggedin &&  this.sessionService.isActive() && !this.sessionService.hasCredit()" (click)="OpenOTPPurchase()">{{ 'HOME.BUY' | translate }}</button> -->
         <button class="uk-button uk-button-default uk-width-1-1" *ngIf="this.sessionService.isPending()"  disabled>{{ 'MESSAGES.MESSAGE_00' | translate }}</button>
         <button class="uk-button uk-button-default uk-width-1-1"  *ngIf="this.sessionService.isInActive()"  disabled><span [innerHtml]="'MESSAGES.MESSAGE_10' | translate"></span></button>
       
