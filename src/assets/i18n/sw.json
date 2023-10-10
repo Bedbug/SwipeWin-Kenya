@@ -30,7 +30,8 @@
         "SUB_SUC_02": "Jisajili katika mchezo wa Mega Quiz!",
         "SUB_SUC_03": "Endelea",
         "SUB_SUC_04": "Komboa raundi yako bila malipo", 
-        "BUYSMS": "Tafadhali tuma neno 'MORE' kwa 29291 ili upate nafasi nyingine ya kucheza tena"
+        "BUYSMS": "Tafadhali tuma neno 'MORE' kwa 29291 ili upate nafasi nyingine ya kucheza tena",
+        "PROMO":"Jumuika na wachezaji wengine na unaweza kuwa mshindi wa zawadi zenye thamani ya shilingi 3,300,000"
     },
     "BURGER": {
         "HOME": "Nyumbani",
@@ -122,7 +123,7 @@
             },
             {
                 "title": "Washindi watapewa zawadi za aina gani?",
-                "descr": "<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>Kredo ya shlingi 100 kwa washindi 60 Kila siku</li><li>Shilingi 25,000 Kila wiki</li></ul>"
+                "descr": "<p>Huduma ya Mega Quiz inakupatia:<p/><ul><li>Shilingi 500,000 kila mwezi</li><li>Shilingi 100,000 kila wiki</li><li>Data bundles za 100MB kwa washindi 100 kila siku</li></ul>"
             },
             {
                 "title": "Nitakaposhinda, nitajulishwa ujumbe huu kwa njia gani?",

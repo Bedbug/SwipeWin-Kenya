@@ -7,27 +7,7 @@
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
     
     <ul class="uk-slideshow-items" >
-      <!-- <li class="list-wrapper">
-            
-        <div class="uk-position-center uk-position-small uk-text-center uk-light">
-            <div class="vector">
-                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1.png" alt=""/>
-                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1K.png" alt=""/>
-              </div>
-              
-        </div>
-      </li> -->
       <li class="list-wrapper">
-        
-        <div class="uk-position-center uk-position-small uk-text-center uk-light">
-            <div class="vector">
-                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2.png" alt=""/>
-                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2K.png" alt=""/>
-              </div>
-              
-        </div>
-      </li>
-      <!-- <li class="list-wrapper">
             
         <div class="uk-position-center uk-position-small uk-text-center uk-light">
             <div class="vector">
@@ -36,7 +16,27 @@
               </div>
               
         </div>
-      </li> -->
+      </li>
+      <li class="list-wrapper">
+        
+        <div class="uk-position-center uk-position-small uk-text-center uk-light">
+            <div class="vector">
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t1K.png" alt=""/>
+              </div>
+              
+        </div>
+      </li>
+      <li class="list-wrapper">
+            
+        <div class="uk-position-center uk-position-small uk-text-center uk-light">
+            <div class="vector">
+                <img class="icon" *ngIf="isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2.png" alt=""/>
+                <img class="icon" *ngIf="!isEng" (click)="gotoPrizes()" style="width: 300px;" src="assets/images/t2K.png" alt=""/>
+              </div>
+              
+        </div>
+      </li>
       <!-- <li class="list-wrapper">
         
         <div class="uk-position-center uk-position-small uk-text-center uk-light">
@@ -56,7 +56,7 @@
 
 </div>
   
-  
+<div class="buttons-container uk-container uk-text-center"><h3 style="color:white">{{ 'HOME.PROMO' | translate }}</h3></div>
   
   <!-- 1. Check if MSISDN is in Header. If Yes Auto Login - goto 3
   2. If No MSISDN in header open Subscribe/login. User adds his MSISDN and we check if already registered, create pin and sent to user by smartlink. If not check with libnumber if orange and register him.
