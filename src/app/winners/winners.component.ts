@@ -29,7 +29,10 @@ export class WinnersComponent implements OnInit {
   
   ngOnInit() {
     window.scroll(0,0);
-    if (!this.sessionService.token || !this.sessionService.isSubscribed || !this.sessionService.isEligible) {
+    if (
+      !this.sessionService.token 
+      || !this.sessionService.isSubscribed 
+      || !this.sessionService.isEligible) {
       // wanna inform the user here?
       this.isActive = true;
       
@@ -38,6 +41,7 @@ export class WinnersComponent implements OnInit {
       
     }
 
+    this.dailyWinners$ = []
     this.data.getWinners().then(
         (data:any) => {
           
@@ -47,8 +51,11 @@ export class WinnersComponent implements OnInit {
           
           
           if(this.dailyWinners$ == null || this.dailyWinners$.length == 0)
-            this.dailyWinners$ = [{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},
-            {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""}];
+          this.dailyWinners$ = [
+            {id: "", username: "", msisdn: "", winDate: "8/12", winSum: ""},
+            {id: "", username: "", msisdn: "", winDate: "9/10", winSum: ""},
+            {id: "", username: "", msisdn: "", winDate: "7/7", winSum: ""},
+            {id: "", username: "", msisdn: "", winDate: "7/8", winSum: ""}];
           
           else if(this.dailyWinners$[0].winDate != ""){
             // for( var i = 0; i < this.dailyWinners$.length; i++) {
@@ -56,13 +63,15 @@ export class WinnersComponent implements OnInit {
             //   this.dailyWinners$[i].winDate = newDate.toString();
             // }
           } else {
-            this.dailyWinners$ = [{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},{id: "", username: "", msisdn: "", winDate: "", winSum: ""},
-            {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},
-            {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},
-            {id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""},{id: "", username: "", msisdn: "", winDate: ""}];
+            this.dailyWinners$ = [
+              {id: "", username: "", msisdn: "", winDate: "8/12", winSum: ""},
+              {id: "", username: "", msisdn: "", winDate: "9/10", winSum: ""},
+              {id: "", username: "", msisdn: "", winDate: "7/7", winSum: ""},
+              {id: "", username: "", msisdn: "", winDate: "7/8", winSum: ""}];
           }
           
-          
+          // this.dailyWinners$.sort((a, b) => parseInt(b.winDate) - parseInt(a.winDate));
+
           this.monthlyWinners$ = data.monthlyWinners$;
           
           console.log(this.monthlyWinners$);
